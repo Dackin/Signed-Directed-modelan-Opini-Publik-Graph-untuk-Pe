@@ -1,34 +1,38 @@
 """
-Twitter/X Scraper pakai Playwright + cookies.json
-Output format SAMA dengan data temen:
-Author_Username, Tweet_Text, Mentions, Reply_To, Quote_Tweet_Of, Engagement
+Twitter/X Scraper menggunakan Playwright dan cookies.json
+Output: Author_Username, Tweet_Text, Mentions, Reply_To, Quote_Tweet_Of, Engagement
 
-Flow: Search keyword → scroll → ambil tweet → masuk tiap tweet ambil reply
+Flow: Cari keyword di halaman search -> scroll -> ambil tweet -> buka tiap tweet untuk ambil reply
 
-REQUIREMENTS:
-    pip install playwright
-    playwright install chromium
+REQUIREMENTS (jalankan di folder ini):
+    pip install playwright pandas
+    python -m playwright install chromium
 
 PERSIAPAN:
-    1. Export cookies dari browser X (pakai extension "Cookie-Editor" atau sejenis)
-    2. Save sebagai 'cookies.json' di folder yang sama dengan script ini
+    Ekspor cookies sesi dari X/Twitter melalui browser.
+    Simpan sebagai 'cookies.json' di folder yang sama dengan skrip ini.
+    Format: JSON array berisi objek cookie (name, value, domain, path).
 """
 
 import json
 import time
 import csv
+import sys
 from playwright.sync_api import sync_playwright
 
+# Paksa stdout menggunakan UTF-8 agar karakter Unicode tidak menyebabkan error di terminal Windows
+sys.stdout.reconfigure(encoding='utf-8')
+
 # ============================================================
-# KONFIGURASI
+# KONFIGURASI — Sesuaikan sebelum menjalankan skrip
 # ============================================================
-KEYWORD = "RUU TNI"
-MAX_SCROLLS_SEARCH = 5        # Scroll di halaman search
-OPEN_TWEETS_FOR_REPLIES = True # True = masuk tiap tweet ambil reply (lebih banyak data)
-MAX_TWEETS_TO_OPEN = 5        # Berapa tweet yang dibuka untuk ambil reply
-MAX_SCROLLS_REPLY = 5          # Scroll di halaman reply per tweet
-OUTPUT_FILE = "contoh.csv"
-COOKIES_FILE = "cookies.json"
+KEYWORD = ""                   # Kata kunci pencarian di X/Twitter
+MAX_SCROLLS_SEARCH = 20        # Jumlah scroll di halaman pencarian (lebih banyak = lebih banyak data)
+OPEN_TWEETS_FOR_REPLIES = True # True = buka tiap tweet untuk mengambil balasan (reply)
+MAX_TWEETS_TO_OPEN = 10        # Jumlah tweet yang dibuka untuk diambil reply-nya
+MAX_SCROLLS_REPLY = 10         # Jumlah scroll di halaman reply per tweet
+OUTPUT_FILE = "output.csv"     # Nama file CSV hasil scraping
+COOKIES_FILE = "cookies.json"  # File cookies sesi X/Twitter
 # ============================================================
 
 
@@ -206,7 +210,7 @@ def main():
         with open(COOKIES_FILE, 'r') as f:
             cookies = json.load(f)
     except FileNotFoundError:
-        print(f"❌ Error: File {COOKIES_FILE} tidak ditemukan!")
+        print(f"[ERROR] File {COOKIES_FILE} tidak ditemukan!")
         return
 
     # 2. Setup CSV

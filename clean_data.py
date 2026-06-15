@@ -21,8 +21,8 @@ def clean_twitter_data(input_csv, output_csv):
     # Ubah teks ke huruf kecil semua (lower) agar pencarian kata tidak sensitif huruf besar/kecil
     df['text_lower'] = df['Tweet_Text'].astype(str).str.lower()
     
-    # Kumpulan keyword yang dianggap valid
-    keywords = ['judol', 'judi online', 'judi', 'komdigi']
+    # Kumpulan keyword yang dianggap valid (topik IKN)
+    keywords = ['ikn', 'ibu kota', 'nusantara', 'investor', 'anggaran', 'pindah ibu kota']
     
     # Buat fungsi untuk mengecek apakah ada keyword di teks
     def contains_keyword(text):
@@ -59,4 +59,4 @@ def clean_twitter_data(input_csv, output_csv):
     print(f"\nData bersih berhasil disimpan di: {output_csv}")
 
 if __name__ == "__main__":
-    clean_twitter_data("hasil_scraping_sna.csv", "data_siap_sna.csv")
+    clean_twitter_data("scraping_ikn_gabungan.csv", "data_siap_sna_ikn.csv")
