@@ -5,11 +5,3 @@ cookies.json
 venv/
 __pycache__/
 .vscode/
-
-# Mengabaikan file CSV sementara hasil scraping di root folder
-# File output.csv adalah default output dari sscript.py
-*.csv
-
-# Pengecualian: izinkan file CSV di dalam folder Data/ untuk di-push
-# Folder ini berisi data final yang siap dikirimkan
-!Data/*.csv
