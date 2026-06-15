@@ -5,3 +5,5 @@ cookies.json
 venv/
 __pycache__/
 .vscode/
+
+lib/

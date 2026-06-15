@@ -1,0 +1,3715 @@
+{
+    "directed": true,
+    "multigraph": false,
+    "graph": {},
+    "nodes": [
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@Meta80ki"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@SupardinWaly"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@MyInfoID"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@Moonstraw78"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@PesonaHatii"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@ANTI_ILEGAL"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@Namecheap"
+        },
+        {
+            "role": "Media",
+            "sentimen": 0,
+            "size": 2,
+            "id": "@KompasTV"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@telomambu221"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@hokkysitungkir"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@hypevox_id"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@paseh_polsek"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@pemkotbekasi"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@lezi_kuwala"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 5,
+            "id": "@indepenSumatera"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@KlikSoloNews"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@MarisaHali96792"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@sospolkw"
+        },
+        {
+            "role": "Pemerintah",
+            "sentimen": -1,
+            "size": 6,
+            "id": "@prabowo"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@Nutri_sar1"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@arinta_nada"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@ngecace"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@DarsAlexandra1"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@JoinNkri"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@tommyyy_shelbyy"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@Monikanihil"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@BadangSetiawan"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@bontang_barat"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@tatisamhadi"
+        },
+        {
+            "role": "Media",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@hariankompas"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@rafijarjit68"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@ichaswe"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@jabarprovgoid"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@Fatimah81819162"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@diktatorbaik"
+        },
+        {
+            "role": "Media",
+            "sentimen": -1,
+            "size": 3,
+            "id": "@txtdrimedia"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@Zulkarnaiinnnnn"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@Vhienaiueo"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@3Humas"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@pemkabpasuruan_"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@miendyoe"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@SuraaaD1979"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@pak_erte92"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@milikity_81863"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@backproperties"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@Arus_Balik1n"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@LovaHandayani"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@polsekanggana_"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@MatiPocong1"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@VivaJatim"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@Media_Asuransi"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@Akomeng6"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@Dewisarita62"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@aktualofficial"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@HarcumTj"
+        },
+        {
+            "role": "Media",
+            "sentimen": 0,
+            "size": 2,
+            "id": "@Harian_Jogja"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@CariSini79113"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@detikinet"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@25054af33038475"
+        },
+        {
+            "role": "Media",
+            "sentimen": -1,
+            "size": 3,
+            "id": "@geloraco"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@daulatdotco"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@berita_keadilan"
+        },
+        {
+            "role": "Pemerintah",
+            "sentimen": -1,
+            "size": 3,
+            "id": "@DPR_RI"
+        },
+        {
+            "role": "Pemerintah",
+            "sentimen": -1,
+            "size": 3,
+            "id": "@DivHumas_Polri"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@Poldametrojaya_"
+        },
+        {
+            "role": "Pemerintah",
+            "sentimen": -1,
+            "size": 3,
+            "id": "@kemkominfo"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@hardiansah82021"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@polres_tanimbar"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@dionwijaya7780"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@jani_jadul"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@hutapeacpg"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@fajaronline"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@EICom2023"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@akuratco"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@redaksihsb"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@PolsekKOBA"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@Dr_Iswadi"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@gibran_tweet"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 2,
+            "id": "@setkabgoid"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@chio5595"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@nawabinekanews"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@OposisiCerdas"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@Sebutaja_Mawar"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@Capitalisborju"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@pemkab_banyumas"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@humas_res_sbb"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@HSangasanga"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@Bank_Joee_"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@holopiscom"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@FMB9ID_"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@muannas_alaidid"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@beritaKBR"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@Bernama_Radio"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@CISSReC"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@GolkarSolid"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@jawapos"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@inilahdotcom"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 2,
+            "id": "@PartaiSocmed"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@PRFMnews"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@humasjabar"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@pikiran_rakyat"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@lensaRTV"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@golkarpedia"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@_hompimpha"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@MiskinTV_"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@RadioElshinta"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@bankbsi_id"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@KhaidirMH"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@UMonline"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 2,
+            "id": "@kompascom"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@VIVAcoid"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@mediaindonesia"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@Mdy_Asmara1701"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@polsek_loakulu"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@Ari3Pras"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@mazzini_gsp"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@ginawijayaaa"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@NarasiNewsroom"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@catchmeupco"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@bernamadotcom"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@fahmi_fadzil"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@komunikasi_gov"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@yoo_jiminae"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@thhhvoo"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@TajukNasional"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@detikcom"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@HumasJatiasih"
+        },
+        {
+            "role": "Influencer",
+            "sentimen": 1,
+            "size": 5,
+            "id": "@safenetvoice"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@INFOBNN"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@grok"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@Wahyu_edin"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@MsiaHariIni"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@MCAOps"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@PPATK"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@Media_Selangor"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@garudatvnews"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@beritainspirat1"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@suarakeadilan99"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@radarmasnetwork"
+        },
+        {
+            "role": "Pemerintah",
+            "sentimen": 1,
+            "size": 6,
+            "id": "@kemkomdigi"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@MediaPermata"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@Logika_saya"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@KPU_ID"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@Kemenag_RI"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@abadikinicom"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@Insertlivettv"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@utamanewscom"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@xLanglangBuana"
+        },
+        {
+            "role": "Influencer",
+            "sentimen": -1,
+            "size": 4,
+            "id": "@kurawa"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@BuletinTV3"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@solsanamcbile_"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@vita_AVP"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@MenteriPekerja"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@SinarOnline"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@GesuriID"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@POLRESTA_MKW"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@OganPolres"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 2,
+            "id": "@narkosun"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@kejaritapsel"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@batamtoday"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@PolsekSmdKota"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@polres_madiun"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@zlk69"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@bharianmy"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@BernamaTV"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@fransis74201222"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@RayylambeabangR"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@PolsekSara45441"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@PMejayan"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@HumasKaltara"
+        },
+        {
+            "role": "Pemerintah",
+            "sentimen": -1,
+            "size": 3,
+            "id": "@ListyoSigitP"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@PNglegok"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@PolsekKarangas1"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@Kamzam08477773"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@Farhanaayuptr"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@INRI2025"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@BAKTIKomdigi"
+        },
+        {
+            "role": "Pemerintah",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@KemenkeuRI"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@EranDjatmika"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@akuserureion"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@Takoyakixb"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@riyanto_hardi"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@rapunjellyeuw"
+        },
+        {
+            "role": "Media",
+            "sentimen": 0,
+            "size": 10,
+            "id": "@kumparan"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@Perkembang105"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@NanaTasyana"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@MangAgus_10"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@Dengardengarco"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@vespamatic96"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@purasahita"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@officialbitv"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@mrfppppp"
+        },
+        {
+            "role": "Komunitas",
+            "sentimen": 0,
+            "size": 4,
+            "id": "@tanyakanrl"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 2,
+            "id": "@MariaAlkaff_"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@Taradiyahry"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@sepuhblokm"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@Feliks_L"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@peppermintbutl_"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 5,
+            "id": "@destipra22"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@johnkecops"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@Yuumu2110"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@deekyuwan"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@VGC_News"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@nammjuuning"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@uber_means"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@Polixnews"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@blogcious"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@tempedotc0"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@ayeambetutu"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@indonesiago_id"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@piokharisma"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@harippe"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@hhiimmeell"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@onnowpurbo"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@unameofme"
+        },
+        {
+            "role": "Media",
+            "sentimen": -1,
+            "size": 8,
+            "id": "@tempodotco"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@nyetirnyajauh"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@Coupron"
+        },
+        {
+            "role": "Komunitas",
+            "sentimen": -1,
+            "size": 11,
+            "id": "@tanyarlfes"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@KilatTerkini"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@business"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@iis_manto36"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@SeekHustle"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@Kemenham_RI"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@irajenar"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@typing_fox"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@ThE_ELm007"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@qquartera"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@_titik2d_"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@Dospemz"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@hamiyeorie"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@Bang_Rosinante"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@kimicikim"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@R_Perkasa"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 3,
+            "id": "@Polymarket"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@ayusdw_"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@riccivall"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@panji_puspo"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@limolikur_"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 4,
+            "id": "@liogtttscrp"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@komdigi_jateng"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@pemko_medan"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@blue_berets7"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@bergeloralah"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@yvansup"
+        },
+        {
+            "role": "Influencer",
+            "sentimen": -1,
+            "size": 6,
+            "id": "@idwiki"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@TempeXBT"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 3,
+            "id": "@orpheuskaze"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@Sanyinjiaoo"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@shavyre"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@salam4jari"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@dnyan83"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 3,
+            "id": "@KangManto123"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@rahma_nitsu"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@kangdede78"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@katsuuudoonn"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@cemeNix7"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@Makaryo0"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@indo_news5"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@sintamudia"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@lembarunika"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@pmtkemkomdigi"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@sejutainfo2025"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@baerchive"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@AkunMboizSam"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@Risayang__"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@PerryGerr"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 3,
+            "id": "@Kulipabrik1016"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@Srik4ndiMuslim2"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@rueetinitas"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@popmatchacorn"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@finfoxes_id"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@sarkaswati"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@PunggawaTech"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@nkkistyarian"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@AjWidjanarko_"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@CyberNeon_16"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@edwinbazz"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@phtigris"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@gritstrash458st"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@namikimora"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@pusatkomdigi"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@robaato_sukoco"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@spiritgw12"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@Jelli_cent"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@popoktokki"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@embah72"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@tobasatu"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 3,
+            "id": "@AnKiiim_"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@ferrerocherra"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@gegngnge"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 3,
+            "id": "@KapudS640"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@nadorablejae"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@ramydhia"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@nrriandika"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@ARSIPAJA"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@Tehangettawar_"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@BukanPegawaiJP"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@setowicaksono"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@boxxtoc"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@nautivelle"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@doimucenah"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@erasmus70"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 2,
+            "id": "@HastoSuprayogo"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@meutya_hafid"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@adabawangmu"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@nu_online"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@geargyu"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@keluhkesacrypto"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@King_PWS_"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@pasfm"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@sinpotv"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@deyuwi"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@aprdhyte"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@cikichee"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@Ikademan_Yong"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@alma_maximoff"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@rizal_septyan"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@gimbot75"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@marvelle_danny"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@intinyadeh"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@Dpram_Back"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@Gendoet3G"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@akademicryptoid"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@SoundOfYogi"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@HisWeihunqi"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@txtdaritaxpayer"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@bangherwin"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 2,
+            "id": "@bakuldimsum_"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@Piyusaja2"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@dimzsky_"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@_cenk90E"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@brightlyweb3"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@detik_edu"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@PR_Kuningan"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@wdwidaa"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@HisyamMochtar"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@alfatih212426"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@tribunnews"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@noorriansjah"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@TirtoID"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@PicalG"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@glowinbeautyy"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@ArtaN7707"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@adoraboul"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@1995Escape"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@GuitarsCute"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@myshawti"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@jaepriss"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@vasagoburn1"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@petricoers"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@xnghancity"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@nyonyamlyn"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@lalavie_enrose"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@haixensen"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@onrambled"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@Jochard_Baby"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 2,
+            "id": "@JodinaticsOFCL"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@gyumirae"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@coma_77_"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@9sal_ap"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@girlwithjudtae"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@CwrNew"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@TeamSupportNNew"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@RadioMega1"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@avrelij5848475"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@DoguErgildogu"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@nettermike"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@IsmiMaulidyati"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@VIZMedia"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 2,
+            "id": "@Kazunori_Komoda"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@yui_vlog"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@azp__"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@ryujinwha36220"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@JinLong_4869"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@KomikoAI"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@JodiStaMaria"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@kdrama_menfess"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@ketikkabar"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@RiauNewsOnline"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@regitajen"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@strategi_id"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@adaditaa"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@nameItAllSarah"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@SujatmikoAnjar"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@FraksiPKB"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@NasionalisSiber"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@CCICPolri"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@indozonemedia"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@ajimit"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@linxxxc_"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@Lampu_Merah29"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@yayan550"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@ini_polisi"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@monitordaycom"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@purplleseokjin"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@TMIHARINI"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@radarbangsa_com"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@dekade_08"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@hope_emak"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@NgkongRoses"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@sigitwid"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@mmckalteng"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@gemaposID"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@penasultra_id"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@goinkrezi"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@CleonChuu"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@davidsunarna"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@SonoraFM92"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@e100ss"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@chokoreeto_milk"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@jaenosuh"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@tbhajel"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 2,
+            "id": "@_chungmyung"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@JuhoonPoyoyoi07"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@juhoonbro"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@tempat_ngeluh"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@mufinsp"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 2,
+            "id": "@markzzhyuk"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@rythmzea"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@YudhaShanny2"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@susan_amelia46"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@ETNewsIndonesia"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@susipudjiastuti"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@GNFI"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@reenfed"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@menbrrr"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@jikyu_mate"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@sejiyt"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@INDOSPORCLE"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@shda_agatha_"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@HistorylandHQ"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@7czs5"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@fauzaanatmaja"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@leooooo00000o"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 2,
+            "id": "@dimarsasongko98"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@teazzitea"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@aijiyw"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@WatchPms"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@Gerindra"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@CiptaBuana_"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@ardisatriawan"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@Ichisatssuga"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@hist0riann"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@ssbmasmas"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@panglimagurau"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@ANGKARASEWU"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@lildaisyyyy_"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@peaxhtherapy"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@sujono_prawiro"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@YandriSusanto"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@ARizaPatria"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@tekarok007"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@TijeKoridorUI"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@CaroliteM1197"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@Mallikaa_1"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@merapi_uncover"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@beatkarbu2008"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@anakdesalagi"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@_Agis1508"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@uzmanerkann"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 0,
+            "size": 1,
+            "id": "@JenarKidjing"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@thejurgenholic"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": 1,
+            "size": 1,
+            "id": "@berjingkat"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@crownlessdawn"
+        },
+        {
+            "role": "Masyarakat",
+            "sentimen": -1,
+            "size": 2,
+            "id": "@to_thineownself"
+        }
+    ],
+    "links": [
+        {
+            "type": "mention",
+            "source": "@ANTI_ILEGAL",
+            "target": "@Namecheap"
+        },
+        {
+            "type": "quote",
+            "source": "@lezi_kuwala",
+            "target": "@indepenSumatera"
+        },
+        {
+            "type": "mention",
+            "source": "@sospolkw",
+            "target": "@prabowo"
+        },
+        {
+            "type": "reply",
+            "source": "@ngecace",
+            "target": "@DarsAlexandra1"
+        },
+        {
+            "type": "mention",
+            "source": "@tatisamhadi",
+            "target": "@hariankompas"
+        },
+        {
+            "type": "quote",
+            "source": "@diktatorbaik",
+            "target": "@txtdrimedia"
+        },
+        {
+            "type": "reply",
+            "source": "@SuraaaD1979",
+            "target": "@pak_erte92"
+        },
+        {
+            "type": "reply",
+            "source": "@Harian_Jogja",
+            "target": "@Harian_Jogja"
+        },
+        {
+            "type": "reply",
+            "source": "@25054af33038475",
+            "target": "@geloraco"
+        },
+        {
+            "type": "mention",
+            "source": "@berita_keadilan",
+            "target": "@DPR_RI"
+        },
+        {
+            "type": "mention",
+            "source": "@berita_keadilan",
+            "target": "@DivHumas_Polri"
+        },
+        {
+            "type": "mention",
+            "source": "@berita_keadilan",
+            "target": "@Poldametrojaya_"
+        },
+        {
+            "type": "mention",
+            "source": "@berita_keadilan",
+            "target": "@kemkominfo"
+        },
+        {
+            "type": "mention",
+            "source": "@Dr_Iswadi",
+            "target": "@prabowo"
+        },
+        {
+            "type": "mention",
+            "source": "@Dr_Iswadi",
+            "target": "@gibran_tweet"
+        },
+        {
+            "type": "mention",
+            "source": "@Dr_Iswadi",
+            "target": "@setkabgoid"
+        },
+        {
+            "type": "mention",
+            "source": "@Bank_Joee_",
+            "target": "@holopiscom"
+        },
+        {
+            "type": "mention",
+            "source": "@beritaKBR",
+            "target": "@CISSReC"
+        },
+        {
+            "type": "quote",
+            "source": "@_hompimpha",
+            "target": "@MiskinTV_"
+        },
+        {
+            "type": "reply",
+            "source": "@bankbsi_id",
+            "target": "@KhaidirMH"
+        },
+        {
+            "type": "mention",
+            "source": "@Ari3Pras",
+            "target": "@kemkominfo"
+        },
+        {
+            "type": "mention",
+            "source": "@Ari3Pras",
+            "target": "@kemkomdigi"
+        },
+        {
+            "type": "mention",
+            "source": "@bernamadotcom",
+            "target": "@fahmi_fadzil"
+        },
+        {
+            "type": "mention",
+            "source": "@bernamadotcom",
+            "target": "@komunikasi_gov"
+        },
+        {
+            "type": "quote",
+            "source": "@yoo_jiminae",
+            "target": "@thhhvoo"
+        },
+        {
+            "type": "reply",
+            "source": "@grok",
+            "target": "@Wahyu_edin"
+        },
+        {
+            "type": "reply",
+            "source": "@grok",
+            "target": "@solsanamcbile_"
+        },
+        {
+            "type": "reply",
+            "source": "@kemkomdigi",
+            "target": "@kemkomdigi"
+        },
+        {
+            "type": "mention",
+            "source": "@Logika_saya",
+            "target": "@KPU_ID"
+        },
+        {
+            "type": "mention",
+            "source": "@Logika_saya",
+            "target": "@Kemenag_RI"
+        },
+        {
+            "type": "mention",
+            "source": "@Logika_saya",
+            "target": "@DPR_RI"
+        },
+        {
+            "type": "quote",
+            "source": "@xLanglangBuana",
+            "target": "@kurawa"
+        },
+        {
+            "type": "quote",
+            "source": "@xLanglangBuana",
+            "target": "@kumparan"
+        },
+        {
+            "type": "quote",
+            "source": "@vita_AVP",
+            "target": "@MenteriPekerja"
+        },
+        {
+            "type": "quote",
+            "source": "@narkosun",
+            "target": "@narkosun"
+        },
+        {
+            "type": "quote",
+            "source": "@fransis74201222",
+            "target": "@RayylambeabangR"
+        },
+        {
+            "type": "quote",
+            "source": "@fransis74201222",
+            "target": "@tribunnews"
+        },
+        {
+            "type": "mention",
+            "source": "@HumasKaltara",
+            "target": "@DivHumas_Polri"
+        },
+        {
+            "type": "mention",
+            "source": "@HumasKaltara",
+            "target": "@ListyoSigitP"
+        },
+        {
+            "type": "mention",
+            "source": "@INRI2025",
+            "target": "@prabowo"
+        },
+        {
+            "type": "mention",
+            "source": "@INRI2025",
+            "target": "@BAKTIKomdigi"
+        },
+        {
+            "type": "mention",
+            "source": "@INRI2025",
+            "target": "@KemenkeuRI"
+        },
+        {
+            "type": "reply",
+            "source": "@EranDjatmika",
+            "target": "@akuserureion"
+        },
+        {
+            "type": "quote",
+            "source": "@rapunjellyeuw",
+            "target": "@kumparan"
+        },
+        {
+            "type": "quote",
+            "source": "@MangAgus_10",
+            "target": "@idwiki"
+        },
+        {
+            "type": "quote",
+            "source": "@mrfppppp",
+            "target": "@tanyakanrl"
+        },
+        {
+            "type": "quote",
+            "source": "@MariaAlkaff_",
+            "target": "@MariaAlkaff_"
+        },
+        {
+            "type": "quote",
+            "source": "@peppermintbutl_",
+            "target": "@destipra22"
+        },
+        {
+            "type": "quote",
+            "source": "@johnkecops",
+            "target": "@Yuumu2110"
+        },
+        {
+            "type": "quote",
+            "source": "@johnkecops",
+            "target": "@ssbmasmas"
+        },
+        {
+            "type": "quote",
+            "source": "@deekyuwan",
+            "target": "@VGC_News"
+        },
+        {
+            "type": "reply",
+            "source": "@nammjuuning",
+            "target": "@tanyakanrl"
+        },
+        {
+            "type": "quote",
+            "source": "@blogcious",
+            "target": "@tempedotc0"
+        },
+        {
+            "type": "quote",
+            "source": "@piokharisma",
+            "target": "@kumparan"
+        },
+        {
+            "type": "quote",
+            "source": "@harippe",
+            "target": "@safenetvoice"
+        },
+        {
+            "type": "quote",
+            "source": "@hhiimmeell",
+            "target": "@onnowpurbo"
+        },
+        {
+            "type": "quote",
+            "source": "@unameofme",
+            "target": "@tempodotco"
+        },
+        {
+            "type": "quote",
+            "source": "@Coupron",
+            "target": "@tanyarlfes"
+        },
+        {
+            "type": "quote",
+            "source": "@KilatTerkini",
+            "target": "@business"
+        },
+        {
+            "type": "quote",
+            "source": "@SeekHustle",
+            "target": "@tempodotco"
+        },
+        {
+            "type": "quote",
+            "source": "@irajenar",
+            "target": "@safenetvoice"
+        },
+        {
+            "type": "quote",
+            "source": "@ThE_ELm007",
+            "target": "@indepenSumatera"
+        },
+        {
+            "type": "quote",
+            "source": "@qquartera",
+            "target": "@tanyarlfes"
+        },
+        {
+            "type": "quote",
+            "source": "@_titik2d_",
+            "target": "@Dospemz"
+        },
+        {
+            "type": "reply",
+            "source": "@Bang_Rosinante",
+            "target": "@tanyakanrl"
+        },
+        {
+            "type": "quote",
+            "source": "@kimicikim",
+            "target": "@kumparan"
+        },
+        {
+            "type": "quote",
+            "source": "@R_Perkasa",
+            "target": "@Polymarket"
+        },
+        {
+            "type": "quote",
+            "source": "@ayusdw_",
+            "target": "@riccivall"
+        },
+        {
+            "type": "quote",
+            "source": "@limolikur_",
+            "target": "@txtdrimedia"
+        },
+        {
+            "type": "quote",
+            "source": "@liogtttscrp",
+            "target": "@liogtttscrp"
+        },
+        {
+            "type": "quote",
+            "source": "@yvansup",
+            "target": "@idwiki"
+        },
+        {
+            "type": "quote",
+            "source": "@TempeXBT",
+            "target": "@orpheuskaze"
+        },
+        {
+            "type": "quote",
+            "source": "@Sanyinjiaoo",
+            "target": "@tanyarlfes"
+        },
+        {
+            "type": "quote",
+            "source": "@shavyre",
+            "target": "@salam4jari"
+        },
+        {
+            "type": "quote",
+            "source": "@dnyan83",
+            "target": "@KangManto123"
+        },
+        {
+            "type": "quote",
+            "source": "@rahma_nitsu",
+            "target": "@kangdede78"
+        },
+        {
+            "type": "quote",
+            "source": "@katsuuudoonn",
+            "target": "@idwiki"
+        },
+        {
+            "type": "reply",
+            "source": "@cemeNix7",
+            "target": "@Makaryo0"
+        },
+        {
+            "type": "quote",
+            "source": "@sintamudia",
+            "target": "@kumparan"
+        },
+        {
+            "type": "mention",
+            "source": "@lembarunika",
+            "target": "@pmtkemkomdigi"
+        },
+        {
+            "type": "quote",
+            "source": "@lembarunika",
+            "target": "@tanyarlfes"
+        },
+        {
+            "type": "quote",
+            "source": "@baerchive",
+            "target": "@tanyarlfes"
+        },
+        {
+            "type": "reply",
+            "source": "@PerryGerr",
+            "target": "@Kulipabrik1016"
+        },
+        {
+            "type": "quote",
+            "source": "@PerryGerr",
+            "target": "@kurawa"
+        },
+        {
+            "type": "quote",
+            "source": "@popmatchacorn",
+            "target": "@tanyarlfes"
+        },
+        {
+            "type": "quote",
+            "source": "@sarkaswati",
+            "target": "@Polymarket"
+        },
+        {
+            "type": "quote",
+            "source": "@nkkistyarian",
+            "target": "@tempodotco"
+        },
+        {
+            "type": "quote",
+            "source": "@AjWidjanarko_",
+            "target": "@safenetvoice"
+        },
+        {
+            "type": "reply",
+            "source": "@CyberNeon_16",
+            "target": "@edwinbazz"
+        },
+        {
+            "type": "quote",
+            "source": "@phtigris",
+            "target": "@idwiki"
+        },
+        {
+            "type": "mention",
+            "source": "@namikimora",
+            "target": "@pusatkomdigi"
+        },
+        {
+            "type": "quote",
+            "source": "@Jelli_cent",
+            "target": "@liogtttscrp"
+        },
+        {
+            "type": "quote",
+            "source": "@popoktokki",
+            "target": "@liogtttscrp"
+        },
+        {
+            "type": "quote",
+            "source": "@tobasatu",
+            "target": "@AnKiiim_"
+        },
+        {
+            "type": "quote",
+            "source": "@ferrerocherra",
+            "target": "@tanyarlfes"
+        },
+        {
+            "type": "quote",
+            "source": "@gegngnge",
+            "target": "@KapudS640"
+        },
+        {
+            "type": "quote",
+            "source": "@nadorablejae",
+            "target": "@kumparan"
+        },
+        {
+            "type": "reply",
+            "source": "@ramydhia",
+            "target": "@Kulipabrik1016"
+        },
+        {
+            "type": "quote",
+            "source": "@ramydhia",
+            "target": "@kurawa"
+        },
+        {
+            "type": "reply",
+            "source": "@nrriandika",
+            "target": "@ARSIPAJA"
+        },
+        {
+            "type": "quote",
+            "source": "@BukanPegawaiJP",
+            "target": "@destipra22"
+        },
+        {
+            "type": "quote",
+            "source": "@doimucenah",
+            "target": "@kumparan"
+        },
+        {
+            "type": "quote",
+            "source": "@erasmus70",
+            "target": "@AnKiiim_"
+        },
+        {
+            "type": "mention",
+            "source": "@HastoSuprayogo",
+            "target": "@meutya_hafid"
+        },
+        {
+            "type": "mention",
+            "source": "@HastoSuprayogo",
+            "target": "@kemkomdigi"
+        },
+        {
+            "type": "reply",
+            "source": "@HastoSuprayogo",
+            "target": "@HastoSuprayogo"
+        },
+        {
+            "type": "quote",
+            "source": "@HastoSuprayogo",
+            "target": "@adabawangmu"
+        },
+        {
+            "type": "quote",
+            "source": "@deyuwi",
+            "target": "@destipra22"
+        },
+        {
+            "type": "quote",
+            "source": "@aprdhyte",
+            "target": "@orpheuskaze"
+        },
+        {
+            "type": "quote",
+            "source": "@cikichee",
+            "target": "@indepenSumatera"
+        },
+        {
+            "type": "quote",
+            "source": "@Ikademan_Yong",
+            "target": "@KompasTV"
+        },
+        {
+            "type": "quote",
+            "source": "@alma_maximoff",
+            "target": "@tanyarlfes"
+        },
+        {
+            "type": "quote",
+            "source": "@rizal_septyan",
+            "target": "@safenetvoice"
+        },
+        {
+            "type": "quote",
+            "source": "@gimbot75",
+            "target": "@tanyarlfes"
+        },
+        {
+            "type": "quote",
+            "source": "@marvelle_danny",
+            "target": "@kumparan"
+        },
+        {
+            "type": "quote",
+            "source": "@intinyadeh",
+            "target": "@tempodotco"
+        },
+        {
+            "type": "quote",
+            "source": "@Dpram_Back",
+            "target": "@Gendoet3G"
+        },
+        {
+            "type": "quote",
+            "source": "@SoundOfYogi",
+            "target": "@destipra22"
+        },
+        {
+            "type": "quote",
+            "source": "@txtdaritaxpayer",
+            "target": "@kumparan"
+        },
+        {
+            "type": "quote",
+            "source": "@bakuldimsum_",
+            "target": "@Piyusaja2"
+        },
+        {
+            "type": "quote",
+            "source": "@bakuldimsum_",
+            "target": "@tbhajel"
+        },
+        {
+            "type": "quote",
+            "source": "@dimzsky_",
+            "target": "@KapudS640"
+        },
+        {
+            "type": "quote",
+            "source": "@glowinbeautyy",
+            "target": "@tempodotco"
+        },
+        {
+            "type": "quote",
+            "source": "@1995Escape",
+            "target": "@indepenSumatera"
+        },
+        {
+            "type": "quote",
+            "source": "@GuitarsCute",
+            "target": "@myshawti"
+        },
+        {
+            "type": "quote",
+            "source": "@petricoers",
+            "target": "@xnghancity"
+        },
+        {
+            "type": "reply",
+            "source": "@lalavie_enrose",
+            "target": "@bakuldimsum_"
+        },
+        {
+            "type": "quote",
+            "source": "@lalavie_enrose",
+            "target": "@haixensen"
+        },
+        {
+            "type": "mention",
+            "source": "@onrambled",
+            "target": "@kemkomdigi"
+        },
+        {
+            "type": "quote",
+            "source": "@Jochard_Baby",
+            "target": "@JodinaticsOFCL"
+        },
+        {
+            "type": "mention",
+            "source": "@JodinaticsOFCL",
+            "target": "@JodiStaMaria"
+        },
+        {
+            "type": "quote",
+            "source": "@gyumirae",
+            "target": "@tanyarlfes"
+        },
+        {
+            "type": "quote",
+            "source": "@coma_77_",
+            "target": "@9sal_ap"
+        },
+        {
+            "type": "mention",
+            "source": "@girlwithjudtae",
+            "target": "@CwrNew"
+        },
+        {
+            "type": "quote",
+            "source": "@girlwithjudtae",
+            "target": "@TeamSupportNNew"
+        },
+        {
+            "type": "quote",
+            "source": "@RadioMega1",
+            "target": "@avrelij5848475"
+        },
+        {
+            "type": "quote",
+            "source": "@DoguErgildogu",
+            "target": "@nettermike"
+        },
+        {
+            "type": "quote",
+            "source": "@IsmiMaulidyati",
+            "target": "@VIZMedia"
+        },
+        {
+            "type": "mention",
+            "source": "@Kazunori_Komoda",
+            "target": "@yui_vlog"
+        },
+        {
+            "type": "quote",
+            "source": "@Kazunori_Komoda",
+            "target": "@Kazunori_Komoda"
+        },
+        {
+            "type": "mention",
+            "source": "@JinLong_4869",
+            "target": "@KomikoAI"
+        },
+        {
+            "type": "quote",
+            "source": "@adaditaa",
+            "target": "@tempodotco"
+        },
+        {
+            "type": "mention",
+            "source": "@NasionalisSiber",
+            "target": "@CCICPolri"
+        },
+        {
+            "type": "mention",
+            "source": "@NasionalisSiber",
+            "target": "@prabowo"
+        },
+        {
+            "type": "mention",
+            "source": "@ajimit",
+            "target": "@kemkomdigi"
+        },
+        {
+            "type": "quote",
+            "source": "@ajimit",
+            "target": "@linxxxc_"
+        },
+        {
+            "type": "reply",
+            "source": "@Lampu_Merah29",
+            "target": "@idwiki"
+        },
+        {
+            "type": "quote",
+            "source": "@Lampu_Merah29",
+            "target": "@yayan550"
+        },
+        {
+            "type": "quote",
+            "source": "@NgkongRoses",
+            "target": "@KangManto123"
+        },
+        {
+            "type": "quote",
+            "source": "@sigitwid",
+            "target": "@PartaiSocmed"
+        },
+        {
+            "type": "reply",
+            "source": "@CleonChuu",
+            "target": "@tempodotco"
+        },
+        {
+            "type": "mention",
+            "source": "@SonoraFM92",
+            "target": "@kompascom"
+        },
+        {
+            "type": "quote",
+            "source": "@_chungmyung",
+            "target": "@_chungmyung"
+        },
+        {
+            "type": "quote",
+            "source": "@JuhoonPoyoyoi07",
+            "target": "@juhoonbro"
+        },
+        {
+            "type": "quote",
+            "source": "@tempat_ngeluh",
+            "target": "@mufinsp"
+        },
+        {
+            "type": "reply",
+            "source": "@markzzhyuk",
+            "target": "@markzzhyuk"
+        },
+        {
+            "type": "quote",
+            "source": "@markzzhyuk",
+            "target": "@rythmzea"
+        },
+        {
+            "type": "mention",
+            "source": "@YudhaShanny2",
+            "target": "@ListyoSigitP"
+        },
+        {
+            "type": "quote",
+            "source": "@susipudjiastuti",
+            "target": "@GNFI"
+        },
+        {
+            "type": "reply",
+            "source": "@reenfed",
+            "target": "@menbrrr"
+        },
+        {
+            "type": "quote",
+            "source": "@sejiyt",
+            "target": "@INDOSPORCLE"
+        },
+        {
+            "type": "reply",
+            "source": "@shda_agatha_",
+            "target": "@HistorylandHQ"
+        },
+        {
+            "type": "quote",
+            "source": "@shda_agatha_",
+            "target": "@7czs5"
+        },
+        {
+            "type": "quote",
+            "source": "@fauzaanatmaja",
+            "target": "@leooooo00000o"
+        },
+        {
+            "type": "reply",
+            "source": "@dimarsasongko98",
+            "target": "@dimarsasongko98"
+        },
+        {
+            "type": "quote",
+            "source": "@teazzitea",
+            "target": "@aijiyw"
+        },
+        {
+            "type": "mention",
+            "source": "@WatchPms",
+            "target": "@prabowo"
+        },
+        {
+            "type": "mention",
+            "source": "@WatchPms",
+            "target": "@Gerindra"
+        },
+        {
+            "type": "quote",
+            "source": "@CiptaBuana_",
+            "target": "@ardisatriawan"
+        },
+        {
+            "type": "quote",
+            "source": "@Ichisatssuga",
+            "target": "@hist0riann"
+        },
+        {
+            "type": "reply",
+            "source": "@panglimagurau",
+            "target": "@ANGKARASEWU"
+        },
+        {
+            "type": "quote",
+            "source": "@lildaisyyyy_",
+            "target": "@peaxhtherapy"
+        },
+        {
+            "type": "mention",
+            "source": "@sujono_prawiro",
+            "target": "@YandriSusanto"
+        },
+        {
+            "type": "mention",
+            "source": "@sujono_prawiro",
+            "target": "@ARizaPatria"
+        },
+        {
+            "type": "quote",
+            "source": "@tekarok007",
+            "target": "@TijeKoridorUI"
+        },
+        {
+            "type": "quote",
+            "source": "@CaroliteM1197",
+            "target": "@geloraco"
+        },
+        {
+            "type": "quote",
+            "source": "@Mallikaa_1",
+            "target": "@merapi_uncover"
+        },
+        {
+            "type": "reply",
+            "source": "@beatkarbu2008",
+            "target": "@anakdesalagi"
+        },
+        {
+            "type": "quote",
+            "source": "@_Agis1508",
+            "target": "@uzmanerkann"
+        },
+        {
+            "type": "quote",
+            "source": "@JenarKidjing",
+            "target": "@thejurgenholic"
+        },
+        {
+            "type": "reply",
+            "source": "@berjingkat",
+            "target": "@crownlessdawn"
+        },
+        {
+            "type": "quote",
+            "source": "@berjingkat",
+            "target": "@to_thineownself"
+        }
+    ]
+}
