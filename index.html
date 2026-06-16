@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Dashboard Polarisasi Opini Interaktif</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <style>
+        @keyframes gradientShift {
+            0%   { background-position: 0% 50%; }
+            50%  { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        body {
+            background: linear-gradient(-45deg, #eef2ff, #f8fafc, #f0fdf4, #eff6ff);
+            background-size: 400% 400%;
+            animation: gradientShift 25s ease infinite;
+            color: #1E293B;
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        #network-graph { min-height: 520px; width: 100%; touch-action: none; }
+        .vis-network { outline: none; }
+        div.vis-tooltip {
+            background-color: #ffffff !important;
+            border: 1px solid #e2e8f0 !important;
+            border-radius: 10px !important;
+            padding: 10px 14px !important;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.10) !important;
+            font-family: inherit !important;
+            color: #1E293B !important;
+            font-size: 13px !important;
+            max-width: 250px !important;
+            pointer-events: none !important;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        #loading-overlay { backdrop-filter: blur(4px); }
+    </style>
+</head>
+<body class="p-4 md:p-8 w-full max-w-7xl mx-auto">
+
+    <!-- Header -->
+    <header class="mb-6 bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
+        <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
+            <div>
+                <h1 id="dashboard-title" class="text-2xl md:text-3xl font-extrabold text-slate-800 tracking-tight">
+                    Dashboard Polarisasi Opini
+                </h1>
+                <p class="text-sm md:text-base text-slate-500 mt-1.5 font-medium flex items-center gap-2">
+<span id="status-text">Pilih skenario atau unggah file JSON untuk memulai...</span>
+                </p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-3 shrink-0 w-full md:w-auto">
+                <label id="btn-upload" class="px-5 py-2.5 bg-slate-700 text-white rounded-xl text-sm font-bold hover:bg-slate-600 transition-colors cursor-pointer flex items-center justify-center gap-2 shadow-sm hover:shadow-md">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                    Unggah JSON Kustom
+                    <input type="file" id="json-upload" accept=".json" class="hidden">
+                </label>
+            </div>
+        </div>
+
+        <!-- Tombol Pilih Skenario -->
+        <div class="mt-4 pt-4 border-t border-slate-100">
+            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3">Pilih Skenario Dataset</p>
+            <div class="flex flex-wrap gap-2">
+                <button id="btn-kontra"
+                    onclick="Dashboard.loadScenario('data/graf_kontra.json', 'Judi Online / Komdigi', 'btn-kontra')"
+                    class="scenario-btn text-sm font-bold px-4 py-2 rounded-full border-2 border-slate-300 bg-white text-slate-600 transition-all hover:border-indigo-400 hover:text-indigo-600 hover:bg-indigo-50">
+                    Skenario 1 &mdash; Judi Online
+                </button>
+                <button id="btn-pro"
+                    onclick="Dashboard.loadScenario('data/graf_pro.json', 'RUU TNI / RUU Polri', 'btn-pro')"
+                    class="scenario-btn text-sm font-bold px-4 py-2 rounded-full border-2 border-slate-300 bg-white text-slate-600 transition-all hover:border-indigo-400 hover:text-indigo-600 hover:bg-indigo-50">
+                    Skenario 2 &mdash; RUU TNI/Polri
+                </button>
+                <button id="btn-ikn"
+                    onclick="Dashboard.loadScenario('data/graf_ikn.json', 'IKN', 'btn-ikn')"
+                    class="scenario-btn text-sm font-bold px-4 py-2 rounded-full border-2 border-slate-300 bg-white text-slate-600 transition-all hover:border-indigo-400 hover:text-indigo-600 hover:bg-indigo-50">
+                    Skenario 3 &mdash; IKN
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- KPI Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        <div class="bg-white rounded-xl shadow-sm p-5 border border-slate-100 flex flex-col justify-center relative group">
+            <div class="absolute inset-0 rounded-xl overflow-hidden pointer-events-none">
+                <div class="absolute -right-4 -top-4 w-16 h-16 bg-blue-50 rounded-full group-hover:scale-150 transition-transform duration-500"></div>
+            </div>
+            <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1 relative z-10">Total Aktor (Nodes)</h3>
+            <p class="text-3xl font-bold text-slate-800 relative z-10" id="kpi-aktor">0</p>
+        </div>
+        <div class="bg-white rounded-xl shadow-sm p-5 border border-slate-100 flex flex-col justify-center relative group">
+            <div class="absolute inset-0 rounded-xl overflow-hidden pointer-events-none">
+                <div class="absolute -right-4 -top-4 w-16 h-16 bg-emerald-50 rounded-full group-hover:scale-150 transition-transform duration-500"></div>
+            </div>
+            <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1 relative z-10">Total Interaksi (Edges)</h3>
+            <p class="text-3xl font-bold text-slate-800 relative z-10" id="kpi-interaksi">0</p>
+        </div>
+        <div class="bg-white rounded-xl shadow-sm p-5 border border-slate-100 flex flex-col justify-center relative group">
+            <div class="absolute inset-0 rounded-xl overflow-hidden pointer-events-none">
+                <div class="absolute -right-4 -top-4 w-16 h-16 bg-purple-50 rounded-full group-hover:scale-150 transition-transform duration-500"></div>
+            </div>
+            <div class="flex items-center gap-1.5 mb-1 relative z-10">
+                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Balance Index</h3>
+                <div class="group relative flex items-center">
+                    <svg class="w-3.5 h-3.5 text-slate-400 cursor-help" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <div class="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-60 opacity-0 group-hover:opacity-100 transition-opacity bg-slate-800 text-white text-[10px] font-normal leading-relaxed p-2.5 rounded shadow-lg z-50 text-left">
+                        Mengukur stabilitas berdasarkan Teori Keseimbangan Struktural (Heider). Mengkalkulasi rasio segitiga interaksi yang logis (misal: "musuh dari musuhku adalah temanku"). Muncul "N/A" jika tidak ada segitiga yang terbentuk.
+                        <div class="absolute top-full left-1/2 -translate-x-1/2 border-[5px] border-transparent border-t-slate-800"></div>
+                    </div>
+                </div>
+            </div>
+            <p class="text-3xl font-bold text-slate-800 relative z-10" id="kpi-balance">0%</p>
+        </div>
+    </div>
+
+    <!-- Main Grid -->
+    <div class="flex flex-col md:flex-row gap-6 relative">
+        <!-- Loading Overlay -->
+        <div id="loading-overlay" class="absolute inset-0 z-40 bg-white/70 hidden flex-col items-center justify-center rounded-xl">
+            <div class="w-12 h-12 border-4 border-slate-200 border-t-blue-600 rounded-full animate-spin mb-3"></div>
+            <p class="text-slate-800 font-bold">Memproses Graf & Algoritma...</p>
+        </div>
+
+        <!-- Graf -->
+        <div class="w-full md:w-2/3 bg-white rounded-xl shadow-sm border border-slate-100 p-2 relative overflow-hidden flex flex-col">
+            <!-- Search Bar on Top of Graph -->
+            <div class="absolute top-4 left-4 z-10 w-64">
+                <div class="relative">
+                    <input type="text" id="search-input" placeholder="Cari username..." class="w-full bg-white/90 backdrop-blur-sm border border-slate-200 rounded-full pl-10 pr-4 py-2 text-sm font-medium text-slate-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                    <svg class="absolute left-3.5 top-2.5 text-slate-400" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </div>
+                <div id="search-results" class="absolute top-full left-0 mt-1 w-full bg-white border border-slate-200 rounded-xl shadow-lg overflow-hidden hidden max-h-48 overflow-y-auto z-20"></div>
+            </div>
+
+            <div id="network-graph" class="rounded-lg flex-1 relative flex items-center justify-center bg-slate-50 border-2 border-dashed border-slate-200 m-2">
+                <div id="empty-state-msg" class="text-center p-6 pointer-events-none">
+                    <svg class="w-16 h-16 mx-auto text-slate-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                    <p class="text-slate-500 font-bold text-lg">Belum Ada Data yang Dimuat</p>
+                    <p class="text-slate-400 text-sm mt-1">Silakan pilih salah satu Skenario Dataset di atas untuk memulai visualisasi graf.</p>
+                </div>
+            </div>
+            <div class="absolute bottom-4 left-4 flex flex-col gap-1.5 pointer-events-none">
+                <div class="flex flex-wrap gap-1.5">
+                    <div onclick="Dashboard.highlightLegend('sentiment', 'pro')" class="pointer-events-auto cursor-pointer hover:bg-slate-50 transition-colors flex items-center gap-1.5 text-xs font-semibold text-slate-700 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-sm border border-slate-200">
+                        <div class="w-3 h-3 rounded-full" style="background:#059669;"></div> Sisi Pro
+                    </div>
+                    <div onclick="Dashboard.highlightLegend('sentiment', 'kontra')" class="pointer-events-auto cursor-pointer hover:bg-slate-50 transition-colors flex items-center gap-1.5 text-xs font-semibold text-slate-700 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-sm border border-slate-200">
+                        <div class="w-3 h-3 rounded-full" style="background:#E11D48;"></div> Sisi Kontra
+                    </div>
+                    <div onclick="Dashboard.highlightLegend('mixed', 'mixed')" class="pointer-events-auto cursor-pointer hover:bg-slate-50 transition-colors flex items-center gap-1.5 text-xs font-semibold text-slate-700 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-sm border border-slate-200" title="Klik untuk melihat interaksi beda kubu">
+                        <div class="flex gap-0.5">
+                            <div class="w-2 h-3 rounded-l-full" style="background:#E11D48;"></div>
+                            <div class="w-2 h-3" style="background:#94a3b8;"></div>
+                            <div class="w-2 h-3 rounded-r-full" style="background:#059669;"></div>
+                        </div>
+                        Node: Kontra &rarr; Pro
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-1.5 mt-1">
+                    <div onclick="Dashboard.highlightLegend('role', 'Masyarakat')" class="pointer-events-auto cursor-pointer hover:bg-slate-50 transition-colors flex items-center gap-1.5 text-xs font-semibold text-slate-700 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-full shadow-sm border border-slate-200">
+                        <span class="text-slate-500">&#9679;</span> Masyarakat
+                    </div>
+                    <div onclick="Dashboard.highlightLegend('role', 'Pemerintah')" class="pointer-events-auto cursor-pointer hover:bg-slate-50 transition-colors flex items-center gap-1.5 text-xs font-semibold text-slate-700 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-full shadow-sm border border-slate-200">
+                        <span class="text-slate-500">&#9632;</span> Pemerintah
+                    </div>
+                    <div onclick="Dashboard.highlightLegend('role', 'Media')" class="pointer-events-auto cursor-pointer hover:bg-slate-50 transition-colors flex items-center gap-1.5 text-xs font-semibold text-slate-700 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-full shadow-sm border border-slate-200">
+                        <span class="text-slate-500">&#9670;</span> Media
+                    </div>
+                    <div onclick="Dashboard.highlightLegend('role', 'Influencer')" class="pointer-events-auto cursor-pointer hover:bg-slate-50 transition-colors flex items-center gap-1.5 text-xs font-semibold text-slate-700 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-full shadow-sm border border-slate-200">
+                        <span class="text-yellow-500">&#9733;</span> Influencer
+                    </div>
+                    <div onclick="Dashboard.highlightLegend('role', 'Komunitas')" class="pointer-events-auto cursor-pointer hover:bg-slate-50 transition-colors flex items-center gap-1.5 text-xs font-semibold text-slate-700 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-full shadow-sm border border-slate-200">
+                        <span class="text-slate-500">&#9650;</span> Komunitas
+                    </div>
+                    <div onclick="Dashboard.highlightLegend('role', 'Partai')" class="pointer-events-auto cursor-pointer hover:bg-slate-50 transition-colors flex items-center gap-1.5 text-xs font-semibold text-slate-700 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-full shadow-sm border border-slate-200">
+                        <span class="text-slate-500">&#11042;</span> Partai
+                    </div>
+                    <div onclick="Dashboard.highlightLegend('role', 'AI')" class="pointer-events-auto cursor-pointer hover:bg-slate-50 transition-colors flex items-center gap-1.5 text-xs font-semibold text-slate-700 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-full shadow-sm border border-slate-200">
+                        <span class="text-slate-500">&#9673;</span> AI
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Panel -->
+        <div class="w-full md:w-1/3 bg-white rounded-xl shadow-sm border border-slate-100 p-5 flex flex-col" style="height:560px;">
+            <h2 class="text-lg font-bold text-slate-800 mb-4 tracking-tight shrink-0">Panel Analisis &amp; Peringkat</h2>
+            <div class="flex flex-wrap gap-2 mb-4 border-b border-slate-100 pb-3 shrink-0">
+                <button onclick="Dashboard.setFilter('Opinion Leaders')" id="tab-opinion" class="group relative flex items-center gap-1.5 text-xs font-bold px-4 py-2 rounded-full bg-slate-800 text-white transition-colors">
+                    Opinion Leaders
+                    <svg class="w-3.5 h-3.5 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <div class="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-52 opacity-0 group-hover:opacity-100 transition-opacity bg-slate-800 text-white text-[10px] font-normal leading-relaxed p-2.5 rounded shadow-lg z-50 text-left">
+                        Aktor dengan skor Net PageRank positif tinggi (> 0.2). Banyak didukung oleh kelompok Pro dan menjadi pusat rujukan opini.
+                        <div class="absolute top-full left-1/2 -translate-x-1/2 border-[5px] border-transparent border-t-slate-800"></div>
+                    </div>
+                </button>
+                <button onclick="Dashboard.setFilter('Controversy Hubs')" id="tab-controversy" class="group relative flex items-center gap-1.5 text-xs font-bold px-4 py-2 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors">
+                    Controversy Hubs
+                    <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <div class="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-52 opacity-0 group-hover:opacity-100 transition-opacity bg-slate-800 text-white text-[10px] font-normal leading-relaxed p-2.5 rounded shadow-lg z-50 text-left">
+                        Aktor dengan skor Net PageRank negatif (< -0.2). Menjadi sasaran utama kritik atau dominan berinteraksi dengan kelompok Kontra.
+                        <div class="absolute top-full left-1/2 -translate-x-1/2 border-[5px] border-transparent border-t-slate-800"></div>
+                    </div>
+                </button>
+                <button onclick="Dashboard.setFilter('Polarizing Influencers')" id="tab-polarizing" class="group relative flex items-center gap-1.5 text-xs font-bold px-4 py-2 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors">
+                    Polarizing Influencers
+                    <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <div class="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-52 opacity-0 group-hover:opacity-100 transition-opacity bg-slate-800 text-white text-[10px] font-normal leading-relaxed p-2.5 rounded shadow-lg z-50 text-left">
+                        Aktor dengan skor Net PageRank di sekitar nol, namun memiliki volume interaksi yang sangat tinggi dari kedua belah pihak.
+                        <div class="absolute top-full left-1/2 -translate-x-1/2 border-[5px] border-transparent border-t-slate-800"></div>
+                    </div>
+                </button>
+            </div>
+            <div id="panel-content" class="overflow-y-auto flex-1 no-scrollbar">
+                <div class="h-full flex flex-col items-center justify-center text-center p-6">
+                    <div class="w-16 h-16 bg-slate-50 rounded-full flex items-center justify-center mb-4 border border-slate-100">
+                        <svg class="text-slate-300" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    </div>
+                    <h3 class="font-bold text-slate-700 mb-1">Belum Ada Data</h3>
+                    <p class="text-sm text-slate-500">Silakan unggah file graf JSON (misal: graf_ikn.json) untuk melihat peringkat aktor.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const Dashboard = (function () {
+
+            // ─── STATE ────────────────────────────────────────────────────────────────
+            let nodesDataset    = null;
+            let edgesDataset    = null;
+            let networkInstance = null;
+            let nodesDataArray  = [];
+            let edgesDataArray  = [];
+            let MOCK_EDGES_RAW  = []; 
+            let ACTOR_IDS       = [];
+            let nodeDataMap     = new Map(); // Untuk menyimpan data asli dari JSON
+            let pageRankMap     = new Map();
+            let currentActiveFilter = 'Opinion Leaders';
+
+            const COLOR = { POS_EDGE: '#059669', NEG_EDGE: '#E11D48', NEUTRAL_EDGE: '#94a3b8' };
+
+            // ─── HELPER: SET STATUS UI ────────────────────────────────────────────────
+            function setStatus(color, text) {
+                document.getElementById('status-text').innerText = text;
+            }
+
+            // ─── HELPER: SET AKTIF TOMBOL SKENARIO ───────────────────────────────────
+            function setActiveScenarioBtn(activeBtnId) {
+                document.querySelectorAll('.scenario-btn').forEach(function(btn) {
+                    btn.className = 'scenario-btn text-sm font-bold px-4 py-2 rounded-full border-2 border-slate-300 bg-white text-slate-600 transition-all hover:border-indigo-400 hover:text-indigo-600 hover:bg-indigo-50';
+                });
+                if (activeBtnId) {
+                    document.getElementById(activeBtnId).className = 'scenario-btn text-sm font-bold px-4 py-2 rounded-full border-2 border-indigo-500 bg-indigo-500 text-white transition-all hover:bg-indigo-600 hover:border-indigo-600 shadow-sm';
+                }
+            }
+
+            // ─── FILE UPLOAD HANDLER ─────────────────────────────────────────────────
+            document.getElementById('json-upload').addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (!file) return;
+
+                setStatus('blue', 'Membaca ' + file.name + '...');
+                document.getElementById('loading-overlay').classList.replace('hidden', 'flex');
+                setActiveScenarioBtn(null); // Hapus highlight tombol skenario
+
+                let topicName = file.name.replace('.json', '').replace('graf_', '').replace(/_/g, ' ').toUpperCase();
+                document.getElementById('dashboard-title').innerText = 'Kustom: ' + topicName;
+
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    try {
+                        const jsonData = JSON.parse(event.target.result);
+                        processJSONData(jsonData);
+                    } catch (err) {
+                        alert('Gagal mem-parsing file JSON. Pastikan formatnya benar.');
+                        document.getElementById('loading-overlay').classList.replace('flex', 'hidden');
+                    }
+                };
+                reader.readAsText(file);
+            });
+
+            // ─── FETCH SKENARIO HANDLER ──────────────────────────────────────────────
+            function loadScenario(path, label, btnId) {
+                if (window.location.protocol === 'file:') {
+                    setStatus('amber', 'Akses file lokal (file://) diblokir browser. Gunakan fitur "Unggah JSON Kustom" atau akses via server (misal Live Server / GitHub Pages).');
+                    return;
+                }
+                
+                setStatus('blue', 'Memuat skenario: ' + label + '...');
+                document.getElementById('loading-overlay').classList.replace('hidden', 'flex');
+                document.getElementById('dashboard-title').innerText = 'Skenario: ' + label;
+                setActiveScenarioBtn(btnId);
+
+                fetch(path)
+                    .then(function(res) {
+                        if (!res.ok) throw new Error('File tidak ditemukan: ' + path);
+                        return res.json();
+                    })
+                    .then(function(jsonData) {
+                        processJSONData(jsonData);
+                    })
+                    .catch(function(err) {
+                        setStatus('amber', 'Gagal memuat: Pastikan diakses via Local Server. Detail: ' + err.message);
+                        document.getElementById('loading-overlay').classList.replace('flex', 'hidden');
+                        setActiveScenarioBtn(null);
+                    });
+            }
+
+            // ─── PROSES DATA JSON ────────────────────────────────────────────────────
+            function processJSONData(data) {
+                nodesDataArray = [];
+                edgesDataArray = [];
+                MOCK_EDGES_RAW = [];
+                ACTOR_IDS = [];
+                nodeDataMap.clear();
+
+                // 1. Ekstrak Nodes
+                if (data.nodes && Array.isArray(data.nodes)) {
+                    data.nodes.forEach(n => {
+                        nodeDataMap.set(n.id, n);
+                        ACTOR_IDS.push(n.id);
+                    });
+                }
+
+                // 2. Ekstrak Edges dan mapping Sentimen
+                if (data.links && Array.isArray(data.links)) {
+                    data.links.forEach((l, idx) => {
+                        // Abaikan self-loop
+                        if (l.source === l.target) return;
+
+                        // Ambil node sumber untuk mengetahui sentimennya
+                        const sourceNode = nodeDataMap.get(l.source);
+                        let edgeSentimen = 0; // Default: diabaikan/netral
+                        
+                        if (sourceNode) {
+                            // Konversi sentimen: 1 (Pro) -> +1, 0 (Kontra) -> -1, -1 (Unknown) -> diabaikan untuk PR
+                            if (sourceNode.sentimen === 1) edgeSentimen = 1;
+                            else if (sourceNode.sentimen === 0) edgeSentimen = -1;
+                        }
+
+                        // Hanya masukkan ke raw edge jika sentimen valid (+1 atau -1)
+                        // Tetapi untuk visualisasi kita butuh semua edge, jadi MOCK_EDGES_RAW menampung semua
+                        // Kita hanya butuh yang punya sentimen valid untuk PageRank
+                        MOCK_EDGES_RAW.push({
+                            id: `e_${idx}`,
+                            from: l.source,
+                            to: l.target,
+                            type: l.type || 'interaction',
+                            sentimen: edgeSentimen,
+                            weight: 1 // Di graf NetworkX aslinya tidak ada weight per baris, jadi kita default 1
+                        });
+                        
+                        // Pastikan node yang ada di link tapi belum ada di nodes ditambahkan
+                        if (!nodeDataMap.has(l.source)) {
+                            ACTOR_IDS.push(l.source);
+                            nodeDataMap.set(l.source, { id: l.source, role: 'Unknown', sentimen: -1, size: 1 });
+                        }
+                        if (!nodeDataMap.has(l.target)) {
+                            ACTOR_IDS.push(l.target);
+                            nodeDataMap.set(l.target, { id: l.target, role: 'Unknown', sentimen: -1, size: 1 });
+                        }
+                    });
+                }
+
+                // Deduplikasi ID
+                ACTOR_IDS = [...new Set(ACTOR_IDS)];
+
+                // Hitung ulang bobot jika ada edge berulang (aggregate)
+                // Menggabungkan multiple interactions (misal A reply B 3 kali) menjadi weight=3
+                const aggregatedEdges = new Map();
+                MOCK_EDGES_RAW.forEach(e => {
+                    const key = `${e.from}->${e.to}`;
+                    if (aggregatedEdges.has(key)) {
+                        const existing = aggregatedEdges.get(key);
+                        existing.weight += 1;
+                    } else {
+                        aggregatedEdges.set(key, { ...e });
+                    }
+                });
+                MOCK_EDGES_RAW = Array.from(aggregatedEdges.values());
+
+                // Jalankan PageRank dan buat data vis
+                setTimeout(function() {
+                    init();
+                    document.getElementById('loading-overlay').classList.replace('flex', 'hidden');
+                    setStatus('emerald', 'Data berhasil dimuat — ' + ACTOR_IDS.length + ' aktor, ' + MOCK_EDGES_RAW.reduce(function(s,e){return s+e.weight;},0) + ' interaksi.');
+                }, 100);
+            }
+
+            // ─── DUAL-VECTOR SIGNED PAGERANK ─────────────────────────────────────────
+            function runDualVectorPageRank(edgeList, actorIds, d, maxIter, tol) {
+                d       = d       || 0.85;
+                maxIter = maxIter || 150;
+                tol     = tol     || 1e-8;
+
+                var n      = actorIds.length;
+                var idxMap = new Map(actorIds.map(function(id, i) { return [id, i]; }));
+
+                function pageRank(edges) {
+                    var outEdges = [], inEdges = [];
+                    for (var i = 0; i < n; i++) { outEdges.push([]); inEdges.push([]); }
+                    edges.forEach(function(e) {
+                        var f = idxMap.get(e.from), t = idxMap.get(e.to);
+                        if (f === undefined || t === undefined || f === t) return;
+                        var w = e.weight || 1;
+                        outEdges[f].push({ to: t, weight: w });
+                        inEdges[t].push({ from: f, weight: w });
+                    });
+                    var outW = outEdges.map(function(outs) {
+                        return outs.reduce(function(s, e) { return s + e.weight; }, 0);
+                    });
+                    var pr = [];
+                    for (var i = 0; i < n; i++) pr.push(1 / n);
+
+                    for (var iter = 0; iter < maxIter; iter++) {
+                        var dangle = 0;
+                        for (var i = 0; i < n; i++) { if (outW[i] === 0) dangle += pr[i]; }
+                        var base  = (1 - d) / n + (d * dangle) / n;
+                        var newPr = [];
+                        for (var j = 0; j < n; j++) {
+                            var sum = base;
+                            inEdges[j].forEach(function(e) { sum += d * pr[e.from] * (e.weight / outW[e.from]); });
+                            newPr.push(sum);
+                        }
+                        var delta = 0;
+                        for (var i = 0; i < n; i++) delta += Math.abs(newPr[i] - pr[i]);
+                        pr = newPr;
+                        if (delta < tol) break;
+                    }
+                    return pr;
+                }
+
+                // G+ (Hanya edge dari aktor PRO)
+                var prPos  = pageRank(edgeList.filter(function(e) { return e.sentimen === 1; }));
+                // G- (Hanya edge dari aktor KONTRA)
+                var prNeg  = pageRank(edgeList.filter(function(e) { return e.sentimen === -1; }));
+                
+                var net    = actorIds.map(function(_, i) { return prPos[i] - prNeg[i]; });
+                var maxAbs = Math.max.apply(null, net.map(Math.abs).concat([1e-10]));
+                var result = new Map();
+                actorIds.forEach(function(id, i) {
+                    result.set(id, { pr_pos: prPos[i], pr_neg: prNeg[i], pr_net: net[i] / maxAbs });
+                });
+                return result;
+            }
+
+            // ─── FUNGSI BANTU ─────────────────────────────────────────────────────────
+
+            function computeDegrees(actorId) {
+                return {
+                    in_degree:  MOCK_EDGES_RAW.filter(function(e) { return e.to   === actorId; }).reduce((sum, e) => sum + e.weight, 0),
+                    out_degree: MOCK_EDGES_RAW.filter(function(e) { return e.from === actorId; }).reduce((sum, e) => sum + e.weight, 0),
+                };
+            }
+
+            function resolveNodeColors(prNet) {
+                var neutral     = { r:148, g:163, b:184 }; // slate-400
+                var green       = { r:  5, g:150, b:105 }; // emerald-600
+                var red         = { r:225, g: 29, b: 72  }; // rose-600
+                var green_light = { r:209, g:250, b:229 }; // emerald-100
+                var red_light   = { r:255, g:228, b:230 }; // rose-100
+                var neutral_light = { r:248, g:250, b:252 }; // slate-50
+
+                var t      = Math.abs(prNet);
+                var target       = prNet >= 0 ? green       : red;
+                var targetLight  = prNet >= 0 ? green_light : red_light;
+
+                function lerp(a, b, t) {
+                    return {
+                        r: Math.round(a.r + (b.r - a.r) * t),
+                        g: Math.round(a.g + (b.g - a.g) * t),
+                        b: Math.round(a.b + (b.b - a.b) * t)
+                    };
+                }
+                function rgb(c) { return 'rgb(' + c.r + ',' + c.g + ',' + c.b + ')'; }
+
+                var borderColor = rgb(lerp(neutral, target, t));
+                var bgColor     = rgb(lerp(neutral_light, targetLight, t));
+                var tH          = Math.min(t + 0.2, 1);
+                var borderHL    = rgb(lerp(neutral, target, tH));
+                var bgHL        = rgb(lerp(neutral_light, targetLight, tH));
+
+                return {
+                    background: bgColor,
+                    border:     borderColor,
+                    highlight:  { background: bgHL, border: borderHL },
+                    hover:      { background: bgHL, border: borderHL }
+                };
+            }
+
+            function resolveNodeShape(role) {
+                var shapeMap = {
+                    'Masyarakat': 'dot',
+                    'Pemerintah': 'square',
+                    'Media':      'diamond',
+                    'Influencer': 'star',
+                    'Komunitas':  'triangle',
+                    'Partai':     'hexagon',
+                    'AI':         'database'
+                };
+                return shapeMap[role] || 'dot';
+            }
+
+            function buildTooltipElement(id, prPos, prNeg, prNet, inDeg, outDeg, roleText) {
+                var colors   = resolveNodeColors(prNet);
+                var prColor  = colors.border;
+                var badgeBg  = colors.background;
+                var category = prNet > 0.2 ? 'Opinion Leader' : (prNet < -0.2 ? 'Controversy Hub' : 'Polarizing');
+
+                var el = document.createElement('div');
+                el.innerHTML = '<div style="font-family:inherit;min-width:200px;">'
+                    + '<div style="font-weight:700;font-size:13px;border-bottom:1px solid #e2e8f0;padding-bottom:7px;margin-bottom:8px;color:#0f172a;display:flex;justify-content:space-between;align-items:center;">'
+                    + '<span>' + id + '</span><span style="font-size:10px;font-weight:700;background:#f1f5f9;color:#64748b;padding:2px 6px;border-radius:6px;">' + roleText + '</span></div>'
+                    + '<div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:4px;"><span style="color:#94a3b8;">PR_pos (G+)</span><span style="font-weight:700;color:#059669;">' + prPos.toFixed(4) + '</span></div>'
+                    + '<div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:4px;"><span style="color:#94a3b8;">PR_neg (G-)</span><span style="font-weight:700;color:#e11d48;">' + prNeg.toFixed(4) + '</span></div>'
+                    + '<div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px;padding-top:4px;border-top:1px solid #f1f5f9;"><span style="color:#94a3b8;font-weight:600;">PR_net (norm.)</span><span style="font-weight:700;color:' + prColor + ';">' + prNet.toFixed(4) + '</span></div>'
+                    + '<div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:8px;"><span style="color:#94a3b8;">In / Out Deg.</span><span style="font-weight:600;color:#334155;">' + inDeg + ' / ' + outDeg + '</span></div>'
+                    + '<div style="padding:3px 6px;border-radius:999px;font-size:10px;font-weight:700;text-align:center;background:' + badgeBg + ';color:' + prColor + ';text-transform:uppercase;letter-spacing:0.6px;">' + category + '</div>'
+                    + '</div>';
+                return el;
+            }
+
+            // ─── PEMBANGUNAN DATA ─────────────────────────────────────────────────────
+
+            function buildNodeData() {
+                pageRankMap = runDualVectorPageRank(MOCK_EDGES_RAW, ACTOR_IDS);
+                return ACTOR_IDS.map(function(id) {
+                    var pr    = pageRankMap.get(id);
+                    var deg   = computeDegrees(id);
+                    var totalDeg = deg.in_degree + deg.out_degree;
+                    var sz       = Math.max(Math.log1p(totalDeg) * 10, 6);
+                    var cols  = resolveNodeColors(pr.pr_net);
+                    var meta  = nodeDataMap.get(id) || { role: 'Unknown' };
+                    
+                    return {
+                        id: id, label: id,
+                        pr_net: pr.pr_net, pr_pos: pr.pr_pos, pr_neg: pr.pr_neg,
+                        in_degree: deg.in_degree, out_degree: deg.out_degree,
+                        role: meta.role,
+                        value: sz, shape: resolveNodeShape(meta.role), color: cols, borderWidth: 2.5,
+                        font: { size:10, face:'inherit', color:'#1e293b', strokeWidth:3, strokeColor:'#ffffff' },
+                        title: buildTooltipElement(id, pr.pr_pos, pr.pr_neg, pr.pr_net, deg.in_degree, deg.out_degree, meta.role),
+                        shadow: { enabled:true, color:'rgba(0,0,0,0.07)', size:6, x:2, y:2 }
+                    };
+                });
+            }
+
+            function buildEdgeData() {
+                return MOCK_EDGES_RAW.map(function(e) {
+                    // Warna edge mengikuti sentimen: hijau (Pro), merah (Kontra), abu-abu (Unknown)
+                    var c = e.sentimen === 1 ? COLOR.POS_EDGE : (e.sentimen === -1 ? COLOR.NEG_EDGE : COLOR.NEUTRAL_EDGE);
+                    return {
+                        id: e.id, from: e.from, to: e.to,
+                        sentimen: e.sentimen, weight: e.weight,
+                        color: { color: c, highlight: c, hover: c, opacity: 0.75 },
+                        arrows: { to: { enabled: true, scaleFactor: 0.5 } },
+                        width: 1.2 + (e.weight || 1) * 0.5
+                    };
+                });
+            }
+
+            // ─── BALANCE INDEX ────────────────────────────────────────────────────────
+
+            function calculateBalanceIndex(edgeList) {
+                var getKey = function(a, b) { return [a, b].sort().join('|||'); };
+                var signMap = new Map();
+                edgeList.forEach(function(edge) {
+                    // Abaikan edge tanpa sentimen kuat
+                    if (edge.sentimen === 0) return;
+                    var key = getKey(edge.from, edge.to);
+                    var ex  = signMap.get(key);
+                    if (ex === undefined) signMap.set(key, edge.sentimen);
+                    else if (ex !== null && ex !== edge.sentimen) signMap.set(key, null); // Konflik/Tidak konsisten
+                });
+                var total = 0, balanced = 0, ids = ACTOR_IDS;
+                for (var i = 0; i < ids.length; i++) {
+                    for (var j = i+1; j < ids.length; j++) {
+                        for (var k = j+1; k < ids.length; k++) {
+                            var sAB = signMap.get(getKey(ids[i], ids[j]));
+                            var sBC = signMap.get(getKey(ids[j], ids[k]));
+                            var sAC = signMap.get(getKey(ids[i], ids[k]));
+                            if (sAB!=null && sAB!==undefined && sBC!=null && sBC!==undefined && sAC!=null && sAC!==undefined) {
+                                total++;
+                                // Segitiga stabil: 3 positif ATAU 1 positif & 2 negatif
+                                if (sAB*sBC*sAC > 0) balanced++;
+                            }
+                        }
+                    }
+                }
+                return { percentage: total===0?null:Math.round((balanced/total)*100), balanced:balanced, total:total };
+            }
+
+            // ─── INISIALISASI ─────────────────────────────────────────────────────────
+
+            function getDynamicPhysics(nodes, edges) {
+                var N = nodes.length || 1;
+                var E = edges.length || 0;
+                
+                var degrees = new Map();
+                nodes.forEach(function(n) { degrees.set(n.id, 0); });
+                edges.forEach(function(e) {
+                    degrees.set(e.from, (degrees.get(e.from) || 0) + 1);
+                    degrees.set(e.to, (degrees.get(e.to) || 0) + 1);
+                });
+                
+                var isolated = 0;
+                var maxDegree = 0;
+                degrees.forEach(function(d) {
+                    if (d === 0) isolated++;
+                    if (d > maxDegree) maxDegree = d;
+                });
+                
+                var isolationRatio = isolated / N;
+                
+                // Setelan Default (Balanced)
+                var centralGravity = 0.15;
+                var springLength = 120;
+                var gravitationalConstant = -3000;
+                var avoidOverlap = 0.8;
+                
+                if (N > 800) {
+                    // Mode Graf Masif (Contoh: graf_kontra)
+                    gravitationalConstant = -8000;
+                    springLength = 200;
+                    centralGravity = 0.05;
+                    avoidOverlap = 0.5;
+                } else if (isolationRatio > 0.3 || (E/N) < 0.5) {
+                    // Mode Graf Pecah/Terisolasi (Contoh: graf_pro)
+                    centralGravity = 0.15; // Turunkan gravitasi agar tidak menggencet ke tengah
+                    springLength = 130;    // Beri ruang lega antar node terhubung
+                    gravitationalConstant = -6000; // Tingkatkan tolakan kuat agar terurai merata
+                    avoidOverlap = 1;     // Tolak tumpukan mutlak
+                } else {
+                    // Mode Sedang (Contoh: graf_ikn)
+                    centralGravity = 0.2;
+                    springLength = 120;
+                    gravitationalConstant = -3000;
+                    avoidOverlap = 0.7;
+                }
+
+                return {
+                    solver: 'barnesHut',
+                    barnesHut: { 
+                        gravitationalConstant: gravitationalConstant, 
+                        centralGravity: centralGravity, 
+                        springLength: springLength, 
+                        springConstant: 0.04, 
+                        damping: 0.09, 
+                        avoidOverlap: avoidOverlap 
+                    },
+                    maxVelocity: 50, timestep: 0.4, minVelocity: 0.01,
+                    stabilization: false
+                };
+            }
+
+            function initializeNetwork(containerId) {
+                if (networkInstance) {
+                    networkInstance.destroy();
+                }
+                var container  = document.getElementById(containerId);
+                
+                // Hapus tampilan empty state saat graf dimulai
+                container.classList.remove('flex', 'items-center', 'justify-center', 'bg-slate-50', 'border-2', 'border-dashed', 'border-slate-200', 'm-2');
+                var emptyMsg = document.getElementById('empty-state-msg');
+                if (emptyMsg) emptyMsg.remove();
+                
+                nodesDataArray = buildNodeData();
+                edgesDataArray = buildEdgeData();
+                nodesDataset   = new vis.DataSet(nodesDataArray);
+                edgesDataset   = new vis.DataSet(edgesDataArray);
+                var options = {
+                    nodes: {
+                        scaling: {
+                            customScalingFunction: function(min,max,total,value){ return max===0?0.5:value/max; },
+                            min: 8, max: 55
+                        }
+                    },
+                    edges: { smooth:{ type:'dynamic' } },
+                    layout: { improvedLayout: false },
+                    interaction: { hover:true, tooltipDelay:120, hideEdgesOnDrag:true, zoomView:true, dragView:true },
+                    physics: getDynamicPhysics(nodesDataArray, edgesDataArray)
+                };
+                networkInstance = new vis.Network(container, { nodes:nodesDataset, edges:edgesDataset }, options);
+                
+                networkInstance.on('click', handleNodeClick);
+                
+                setupSearchBar();
+            }
+
+            // ─── SEARCH BAR ──────────────────────────────────────────────────────────
+            function setupSearchBar() {
+                const searchInput = document.getElementById('search-input');
+                const searchResults = document.getElementById('search-results');
+                
+                searchInput.addEventListener('input', function(e) {
+                    const q = e.target.value.toLowerCase();
+                    if (q.length < 2) {
+                        searchResults.classList.add('hidden');
+                        return;
+                    }
+                    const hits = nodesDataArray.filter(n => n.label.toLowerCase().includes(q)).slice(0, 10);
+                    if (hits.length > 0) {
+                        searchResults.innerHTML = hits.map(n => 
+                            `<div class="px-4 py-2 hover:bg-slate-50 cursor-pointer border-b border-slate-100 last:border-0 text-sm font-semibold text-slate-700 flex justify-between" onclick="Dashboard.focusOnNode('${n.id}')">
+                                <span>${n.label}</span>
+                                <span class="text-[10px] bg-slate-100 text-slate-500 px-2 py-0.5 rounded">${n.role}</span>
+                            </div>`
+                        ).join('');
+                        searchResults.classList.remove('hidden');
+                    } else {
+                        searchResults.innerHTML = `<div class="px-4 py-3 text-sm text-slate-400 italic">Tidak ditemukan</div>`;
+                        searchResults.classList.remove('hidden');
+                    }
+                });
+                
+                document.addEventListener('click', function(e) {
+                    if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+                        searchResults.classList.add('hidden');
+                    }
+                });
+            }
+
+            // ─── EVENT HANDLERS ───────────────────────────────────────────────────────
+
+            function handleNodeClick(params) {
+                if (params.nodes.length > 0) {
+                    applyNeighborhoodHighlight(params.nodes[0]);
+                    renderNodeDetail(params.nodes[0]);
+                } else {
+                    resetHighlight();
+                    updateLeaderboard(currentActiveFilter);
+                }
+            }
+
+            var currentLegendFilter = null;
+            function resetHighlight() {
+                currentLegendFilter = null;
+                nodesDataset.update(nodesDataArray.map(function(n) {
+                    return { id:n.id, color:resolveNodeColors(n.pr_net), font:{ color:'#1e293b' } };
+                }));
+                edgesDataset.update(edgesDataArray.map(function(e) {
+                    return { id:e.id, color:{ color:e.sentimen===1?COLOR.POS_EDGE:(e.sentimen===-1?COLOR.NEG_EDGE:COLOR.NEUTRAL_EDGE), opacity:0.75 } };
+                }));
+            }
+
+            function highlightLegend(type, value) {
+                if (currentLegendFilter && currentLegendFilter.type === type && currentLegendFilter.value === value) {
+                    resetHighlight();
+                    return;
+                }
+                currentLegendFilter = { type: type, value: value };
+                
+                var targetNodes = new Set();
+                nodesDataArray.forEach(function(n) {
+                    var match = false;
+                    if (type === 'sentiment') {
+                        if (value === 'pro') match = (n.pr_net >= 0);
+                        else if (value === 'kontra') match = (n.pr_net < 0);
+                    } else if (type === 'role') {
+                        match = (n.role === value);
+                    }
+                    if (match) targetNodes.add(n.id);
+                });
+
+                if (type === 'mixed') {
+                    var targetEdges = new Set();
+                    edgesDataArray.forEach(function(e) {
+                        var fromNode = nodesDataArray.find(n => n.id === e.from);
+                        var toNode = nodesDataArray.find(n => n.id === e.to);
+                        if (fromNode && toNode && ((fromNode.pr_net < 0 && toNode.pr_net >= 0) || (fromNode.pr_net >= 0 && toNode.pr_net < 0))) {
+                            targetEdges.add(e.id);
+                            targetNodes.add(e.from);
+                            targetNodes.add(e.to);
+                        }
+                    });
+                    
+                    nodesDataset.update(nodesDataArray.map(function(n) {
+                        return { id: n.id, color: targetNodes.has(n.id) ? resolveNodeColors(n.pr_net) : { background:'#f1f5f9', border:'#e2e8f0' }, font: { color: targetNodes.has(n.id) ? '#1e293b' : '#cbd5e1' } };
+                    }));
+                    edgesDataset.update(edgesDataArray.map(function(e) {
+                        return { id: e.id, color: targetEdges.has(e.id) ? { color: e.sentimen===1?COLOR.POS_EDGE:(e.sentimen===-1?COLOR.NEG_EDGE:COLOR.NEUTRAL_EDGE), opacity:1 } : { color:'#e2e8f0', opacity:0.07 } };
+                    }));
+                    return;
+                }
+
+                nodesDataset.update(nodesDataArray.map(function(n) {
+                    return { id: n.id, color: targetNodes.has(n.id) ? resolveNodeColors(n.pr_net) : { background:'#f1f5f9', border:'#e2e8f0' }, font: { color: targetNodes.has(n.id) ? '#1e293b' : '#cbd5e1' } };
+                }));
+                
+                edgesDataset.update(edgesDataArray.map(function(e) {
+                    var visible = targetNodes.has(e.from) && targetNodes.has(e.to);
+                    return { id: e.id, color: visible ? { color: e.sentimen===1?COLOR.POS_EDGE:(e.sentimen===-1?COLOR.NEG_EDGE:COLOR.NEUTRAL_EDGE), opacity:1 } : { color:'#e2e8f0', opacity:0.07 } };
+                }));
+            }
+
+            function applyNeighborhoodHighlight(centralId) {
+                var nbrs = new Set(networkInstance.getConnectedNodes(centralId));
+                nbrs.add(centralId);
+                var cedges = new Set(networkInstance.getConnectedEdges(centralId));
+                nodesDataset.update(nodesDataArray.map(function(n) {
+                    return {
+                        id: n.id,
+                        color: nbrs.has(n.id) ? resolveNodeColors(n.pr_net) : { background:'#f1f5f9', border:'#e2e8f0' },
+                        font:  { color: nbrs.has(n.id) ? '#1e293b' : '#cbd5e1' }
+                    };
+                }));
+                edgesDataset.update(edgesDataArray.map(function(e) {
+                    return {
+                        id: e.id,
+                        color: cedges.has(e.id)
+                            ? { color: e.sentimen===1?COLOR.POS_EDGE:(e.sentimen===-1?COLOR.NEG_EDGE:COLOR.NEUTRAL_EDGE), opacity:1 }
+                            : { color:'#e2e8f0', opacity:0.07 }
+                    };
+                }));
+            }
+
+            // ─── KPI ─────────────────────────────────────────────────────────────────
+
+            function updateKPIs() {
+                var b = calculateBalanceIndex(MOCK_EDGES_RAW);
+                document.getElementById('kpi-aktor').innerText     = ACTOR_IDS.length.toLocaleString('id-ID');
+                document.getElementById('kpi-interaksi').innerText = MOCK_EDGES_RAW.reduce((sum, e) => sum + e.weight, 0).toLocaleString('id-ID');
+                document.getElementById('kpi-balance').innerText   = b.total===0?'0%':(b.percentage+'%');
+            }
+
+            // ─── PAPAN PERINGKAT ──────────────────────────────────────────────────────
+
+            function compute90thPercentile(nodes) {
+                var vols = nodes.map(function(n){ return n.in_degree+n.out_degree; }).sort(function(a,b){return a-b;});
+                return vols[Math.max(0, Math.ceil(vols.length*0.9)-1)];
+            }
+
+            var TAB_DEFINITIONS = [
+                { id:'Opinion Leaders',        elementId:'tab-opinion',
+                  sortFn: function(a,b){ return b.pr_net-a.pr_net; } },
+                { id:'Controversy Hubs',       elementId:'tab-controversy',
+                  sortFn: function(a,b){ return a.pr_net-b.pr_net; } },
+                { id:'Polarizing Influencers', elementId:'tab-polarizing',
+                  getFilterFn: function(nodes) {
+                      var thr = compute90thPercentile(nodes);
+                      return function(n){ return (n.in_degree+n.out_degree)>=thr; };
+                  },
+                  sortFn: function(a,b){ return Math.abs(a.pr_net)-Math.abs(b.pr_net); } }
+            ];
+
+            function updateLeaderboard(filterType) {
+                currentActiveFilter = filterType;
+                TAB_DEFINITIONS.forEach(function(tab) {
+                    var el = document.getElementById(tab.elementId);
+                    if (tab.id === filterType) {
+                        el.classList.remove('bg-slate-100', 'text-slate-600', 'hover:bg-slate-200');
+                        el.classList.add('bg-slate-800', 'text-white');
+                    } else {
+                        el.classList.remove('bg-slate-800', 'text-white');
+                        el.classList.add('bg-slate-100', 'text-slate-600', 'hover:bg-slate-200');
+                    }
+                });
+                var tabDef  = TAB_DEFINITIONS.find(function(t){ return t.id===filterType; });
+                var dataset = nodesDataArray.slice();
+                var fn      = tabDef.getFilterFn ? tabDef.getFilterFn(nodesDataArray) : (tabDef.filterFn||null);
+                if (fn) dataset = dataset.filter(fn);
+                var sorted  = dataset.sort(tabDef.sortFn).slice(0,8);
+                document.getElementById('panel-content').innerHTML = renderLeaderboardHtml(sorted);
+            }
+
+            function renderLeaderboardHtml(items) {
+                if (!items.length) return '<p class="text-sm text-slate-400 italic text-center mt-10">Tidak ada data memenuhi kriteria.</p>';
+                return '<ul class="space-y-2.5 pb-4">' + items.map(function(node, i) {
+                    var cols = resolveNodeColors(node.pr_net);
+                    var prColorStyle = 'color:' + cols.border + ';';
+                    var rowStyle = 'background:' + cols.background + ';border-color:' + cols.border + '40;';
+                    return '<li style="' + rowStyle + '" class="flex items-center justify-between p-3 rounded-xl border cursor-pointer transition-all hover:opacity-90" onclick="Dashboard.focusOnNode(\'' + node.id + '\')">'
+                        + '<div class="flex items-center gap-3 w-3/4">'
+                        + '<div class="w-7 h-7 rounded-full bg-white border border-slate-200 shadow-sm text-xs flex items-center justify-center font-bold text-slate-600 shrink-0">' + (i+1) + '</div>'
+                        + '<div class="flex flex-col min-w-0 w-full">'
+                        + '<span class="text-sm font-bold text-slate-800 truncate">' + node.id + '</span>'
+                        + '<span class="text-[11px] font-medium text-slate-500 truncate">' + node.role + ' &bull; In/Out: ' + node.in_degree + '/' + node.out_degree + '</span>'
+                        + '</div></div>'
+                        + '<div class="text-right ml-2 shrink-0">'
+                        + '<span style="' + prColorStyle + '" class="text-sm font-extrabold">' + node.pr_net.toFixed(4) + '</span>'
+                        + '<div class="text-[9px] font-bold text-slate-400 uppercase tracking-wider">PR_net</div>'
+                        + '</div></li>';
+                }).join('') + '</ul>';
+            }
+
+            // ─── PANEL DETAIL ─────────────────────────────────────────────────────────
+
+            function renderNodeDetail(nodeId) {
+                var node = nodesDataArray.find(function(n){ return n.id===nodeId; });
+                if (!node) return;
+                var relatedEdges = MOCK_EDGES_RAW.filter(function(e){ return e.from===nodeId||e.to===nodeId; }).sort((a,b) => b.weight - a.weight);
+                var cols         = resolveNodeColors(node.pr_net);
+                var prColorStyle = 'color:' + cols.border;
+                var category     = node.pr_net > 0.2 ? 'Opinion Leader' : (node.pr_net < -0.2 ? 'Controversy Hub' : 'Polarizing Influencer');
+
+                var rows = relatedEdges.slice(0,5).map(function(e) {
+                    var isIn = e.to===nodeId;
+                    var cp   = isIn ? e.from : e.to;
+                    var dir  = isIn ? 'Masuk dari' : 'Keluar ke';
+                    var badge = '';
+                    if(e.sentimen === 1) badge = '<span class="px-2 py-1 bg-emerald-50 text-emerald-700 border border-emerald-100 rounded-md text-[10px] font-extrabold uppercase">Dukungan</span>';
+                    else if(e.sentimen === -1) badge = '<span class="px-2 py-1 bg-rose-50 text-rose-700 border border-rose-100 rounded-md text-[10px] font-extrabold uppercase">Kritik</span>';
+                    else badge = '<span class="px-2 py-1 bg-slate-100 text-slate-500 border border-slate-200 rounded-md text-[10px] font-extrabold uppercase">Unknown</span>';
+
+                    return '<li class="p-3 bg-white rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">'
+                        + '<div class="flex justify-between items-center mb-1">'
+                        + '<div class="flex flex-col min-w-0 mr-2 w-3/4">'
+                        + '<span class="text-[10px] font-bold text-slate-400 uppercase">' + dir + ' ('+e.type+')</span>'
+                        + '<span class="text-sm font-bold text-slate-800 truncate cursor-pointer hover:underline" onclick="Dashboard.focusOnNode(\''+cp+'\')">' + cp + '</span></div>'
+                        + '<div class="shrink-0">' + badge + '</div></div>'
+                        + '<div class="flex items-center gap-1 mt-1">'
+                        + '<span class="text-[9px] text-slate-400 uppercase tracking-wide font-bold">Volume Interaksi:</span>'
+                        + '<span class="text-[10px] font-bold text-slate-500">x' + e.weight + '</span></div></li>';
+                }).join('');
+
+                var prGridBg = node.pr_net > 0 ? 'bg-emerald-50 border-emerald-200' : (node.pr_net < 0 ? 'bg-rose-50 border-rose-200' : 'bg-slate-100 border-slate-200');
+
+                document.getElementById('panel-content').innerHTML =
+                    '<div class="mb-4">'
+                    + '<button onclick="Dashboard.resetAndReturn()" class="text-xs font-semibold text-blue-600 hover:text-blue-800 mb-4 flex items-center gap-1.5 bg-blue-50 hover:bg-blue-100 px-2.5 py-1.5 rounded-lg w-fit transition-colors">'
+                    + '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Kembali ke Peringkat</button>'
+                    + '<div class="flex items-center gap-3 mb-3">'
+                    + '<div style="background:' + cols.border + ';" class="w-10 h-10 rounded-full text-white flex items-center justify-center font-bold text-base shrink-0">' + node.id.charAt(0) + '</div>'
+                    + '<div class="w-full min-w-0"><div class="flex justify-between items-start"><h3 class="text-base font-extrabold text-slate-800 leading-tight truncate">' + node.id + '</h3>'
+                    + '<span class="text-[9px] font-bold bg-slate-100 text-slate-500 px-2 py-0.5 rounded border border-slate-200 shrink-0 ml-2">' + node.role + '</span></div>'
+                    + '<span style="' + prColorStyle + ';" class="text-xs font-semibold">' + category + '</span></div></div>'
+                    + '<div class="bg-slate-50 rounded-xl border border-slate-100 p-3 mb-3">'
+                    + '<div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2">Dual-Vector PageRank</div>'
+                    + '<div class="grid grid-cols-3 gap-2">'
+                    + '<div class="flex flex-col items-center bg-emerald-50 rounded-lg p-2 border border-emerald-100"><span class="text-[9px] font-bold text-emerald-600 uppercase">PR_pos</span><span class="text-sm font-extrabold text-emerald-700">' + node.pr_pos.toFixed(3) + '</span></div>'
+                    + '<div class="flex flex-col items-center bg-rose-50 rounded-lg p-2 border border-rose-100"><span class="text-[9px] font-bold text-rose-600 uppercase">PR_neg</span><span class="text-sm font-extrabold text-rose-700">' + node.pr_neg.toFixed(3) + '</span></div>'
+                    + '<div class="flex flex-col items-center ' + prGridBg + ' rounded-lg p-2 border"><span class="text-[9px] font-bold text-slate-500 uppercase">PR_net</span><span style="' + prColorStyle + ';" class="text-sm font-extrabold">' + node.pr_net.toFixed(3) + '</span></div>'
+                    + '</div></div>'
+                    + '<div class="grid grid-cols-2 gap-2.5 mb-3">'
+                    + '<div class="bg-slate-50 p-3 rounded-xl border border-slate-100"><div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">In-Degree</div><div class="text-xl font-extrabold text-slate-800 mt-0.5">' + node.in_degree + '</div></div>'
+                    + '<div class="bg-slate-50 p-3 rounded-xl border border-slate-100"><div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Out-Degree</div><div class="text-xl font-extrabold text-slate-800 mt-0.5">' + node.out_degree + '</div></div>'
+                    + '</div></div>'
+                    + '<div><h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 border-b border-slate-100 pb-2">Top Interaksi (' + Math.min(relatedEdges.length,5) + ' dari ' + relatedEdges.length + ')</h4>'
+                    + '<ul class="space-y-2 pb-4">' + (rows||'<li><p class="text-sm text-slate-400 italic text-center py-4">Tidak ada interaksi tercatat.</p></li>') + '</ul></div>';
+            }
+
+            // ─── API PUBLIK ───────────────────────────────────────────────────────────
+
+            function init() {
+                initializeNetwork('network-graph');
+                updateKPIs();
+                updateLeaderboard('Opinion Leaders');
+            }
+
+            return {
+                start: function() {
+                },
+                setFilter: updateLeaderboard,
+                focusOnNode: function(id) {
+                    document.getElementById('search-results').classList.add('hidden');
+                    networkInstance.focus(id, { scale: 1.2, animation: { duration: 1000, easingFunction: 'easeInOutQuad' } });
+                    networkInstance.selectNodes([id]);
+                    handleNodeClick({ nodes: [id] });
+                },
+                resetAndReturn: function() {
+                    networkInstance.unselectAll();
+                    resetHighlight();
+                    updateLeaderboard(currentActiveFilter);
+                    networkInstance.fit({ animation:{ duration:500, easingFunction:'easeInOutQuad' } });
+                },
+                highlightLegend: highlightLegend,
+                loadScenario: loadScenario
+            };
+        })();
+
+        document.addEventListener('DOMContentLoaded', Dashboard.start);
+    </script>
+</body>
+</html>
