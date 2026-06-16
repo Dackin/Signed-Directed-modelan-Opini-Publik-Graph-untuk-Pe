@@ -16,7 +16,7 @@
             "id": "@SupardinWaly"
         },
         {
-            "role": "Masyarakat",
+            "role": "Media",
             "sentimen": 1,
             "size": 1,
             "id": "@MyInfoID"
@@ -76,7 +76,7 @@
             "id": "@paseh_polsek"
         },
         {
-            "role": "Masyarakat",
+            "role": "Pemerintah",
             "sentimen": 1,
             "size": 1,
             "id": "@pemkotbekasi"
@@ -88,13 +88,13 @@
             "id": "@lezi_kuwala"
         },
         {
-            "role": "Masyarakat",
+            "role": "Komunitas",
             "sentimen": -1,
             "size": 5,
             "id": "@indepenSumatera"
         },
         {
-            "role": "Masyarakat",
+            "role": "Media",
             "sentimen": 1,
             "size": 1,
             "id": "@KlikSoloNews"
@@ -346,7 +346,7 @@
             "id": "@CariSini79113"
         },
         {
-            "role": "Masyarakat",
+            "role": "Media",
             "sentimen": 0,
             "size": 1,
             "id": "@detikinet"
@@ -370,7 +370,7 @@
             "id": "@daulatdotco"
         },
         {
-            "role": "Masyarakat",
+            "role": "Komunitas",
             "sentimen": 1,
             "size": 1,
             "id": "@berita_keadilan"
@@ -388,7 +388,7 @@
             "id": "@DivHumas_Polri"
         },
         {
-            "role": "Masyarakat",
+            "role": "Pemerintah",
             "sentimen": -1,
             "size": 2,
             "id": "@Poldametrojaya_"
@@ -406,7 +406,7 @@
             "id": "@hardiansah82021"
         },
         {
-            "role": "Masyarakat",
+            "role": "Pemerintah",
             "sentimen": 1,
             "size": 1,
             "id": "@polres_tanimbar"
@@ -442,7 +442,7 @@
             "id": "@EICom2023"
         },
         {
-            "role": "Masyarakat",
+            "role": "Media",
             "sentimen": 0,
             "size": 1,
             "id": "@akuratco"
@@ -454,7 +454,7 @@
             "id": "@redaksihsb"
         },
         {
-            "role": "Masyarakat",
+            "role": "Pemerintah",
             "sentimen": 1,
             "size": 1,
             "id": "@PolsekKOBA"
@@ -550,13 +550,13 @@
             "id": "@muannas_alaidid"
         },
         {
-            "role": "Masyarakat",
+            "role": "Media",
             "sentimen": 0,
             "size": 1,
             "id": "@beritaKBR"
         },
         {
-            "role": "Masyarakat",
+            "role": "Media",
             "sentimen": 0,
             "size": 1,
             "id": "@Bernama_Radio"
@@ -568,7 +568,7 @@
             "id": "@CISSReC"
         },
         {
-            "role": "Masyarakat",
+            "role": "Partai",
             "sentimen": 1,
             "size": 1,
             "id": "@GolkarSolid"
@@ -580,7 +580,7 @@
             "id": "@jawapos"
         },
         {
-            "role": "Masyarakat",
+            "role": "Media",
             "sentimen": 0,
             "size": 1,
             "id": "@inilahdotcom"
@@ -592,31 +592,31 @@
             "id": "@PartaiSocmed"
         },
         {
-            "role": "Masyarakat",
+            "role": "Media",
             "sentimen": 1,
             "size": 1,
             "id": "@PRFMnews"
         },
         {
-            "role": "Masyarakat",
+            "role": "Pemerintah",
             "sentimen": 0,
             "size": 1,
             "id": "@humasjabar"
         },
         {
-            "role": "Masyarakat",
+            "role": "Media",
             "sentimen": 0,
             "size": 1,
             "id": "@pikiran_rakyat"
         },
         {
-            "role": "Masyarakat",
+            "role": "Media",
             "sentimen": 1,
             "size": 1,
             "id": "@lensaRTV"
         },
         {
-            "role": "Masyarakat",
+            "role": "Partai",
             "sentimen": 1,
             "size": 1,
             "id": "@golkarpedia"
@@ -634,13 +634,13 @@
             "id": "@MiskinTV_"
         },
         {
-            "role": "Masyarakat",
+            "role": "Media",
             "sentimen": 1,
             "size": 1,
             "id": "@RadioElshinta"
         },
         {
-            "role": "Masyarakat",
+            "role": "Pemerintah",
             "sentimen": 1,
             "size": 1,
             "id": "@bankbsi_id"
@@ -658,19 +658,19 @@
             "id": "@UMonline"
         },
         {
-            "role": "Masyarakat",
+            "role": "Media",
             "sentimen": 0,
             "size": 2,
             "id": "@kompascom"
         },
         {
-            "role": "Masyarakat",
+            "role": "Media",
             "sentimen": 1,
             "size": 1,
             "id": "@VIVAcoid"
         },
         {
-            "role": "Masyarakat",
+            "role": "Media",
             "sentimen": 0,
             "size": 1,
             "id": "@mediaindonesia"
@@ -682,7 +682,7 @@
             "id": "@Mdy_Asmara1701"
         },
         {
-            "role": "Masyarakat",
+            "role": "Pemerintah",
             "sentimen": 1,
             "size": 1,
             "id": "@polsek_loakulu"
@@ -706,7 +706,7 @@
             "id": "@ginawijayaaa"
         },
         {
-            "role": "Masyarakat",
+            "role": "Media",
             "sentimen": 0,
             "size": 1,
             "id": "@NarasiNewsroom"
@@ -718,7 +718,7 @@
             "id": "@catchmeupco"
         },
         {
-            "role": "Masyarakat",
+            "role": "Media",
             "sentimen": 0,
             "size": 1,
             "id": "@bernamadotcom"
@@ -754,7 +754,7 @@
             "id": "@TajukNasional"
         },
         {
-            "role": "Masyarakat",
+            "role": "Media",
             "sentimen": 0,
             "size": 1,
             "id": "@detikcom"
@@ -778,7 +778,7 @@
             "id": "@INFOBNN"
         },
         {
-            "role": "Masyarakat",
+            "role": "AI",
             "sentimen": 1,
             "size": 1,
             "id": "@grok"
@@ -808,13 +808,13 @@
             "id": "@PPATK"
         },
         {
-            "role": "Masyarakat",
+            "role": "Media",
             "sentimen": 0,
             "size": 1,
             "id": "@Media_Selangor"
         },
         {
-            "role": "Masyarakat",
+            "role": "Media",
             "sentimen": 1,
             "size": 1,
             "id": "@garudatvnews"
@@ -856,7 +856,7 @@
             "id": "@Logika_saya"
         },
         {
-            "role": "Masyarakat",
+            "role": "Pemerintah",
             "sentimen": -1,
             "size": 2,
             "id": "@KPU_ID"
@@ -874,7 +874,7 @@
             "id": "@abadikinicom"
         },
         {
-            "role": "Masyarakat",
+            "role": "Media",
             "sentimen": 1,
             "size": 1,
             "id": "@Insertlivettv"
@@ -898,7 +898,7 @@
             "id": "@kurawa"
         },
         {
-            "role": "Masyarakat",
+            "role": "Media",
             "sentimen": 1,
             "size": 1,
             "id": "@BuletinTV3"
@@ -934,7 +934,7 @@
             "id": "@GesuriID"
         },
         {
-            "role": "Masyarakat",
+            "role": "Pemerintah",
             "sentimen": 1,
             "size": 1,
             "id": "@POLRESTA_MKW"
@@ -958,19 +958,19 @@
             "id": "@kejaritapsel"
         },
         {
-            "role": "Masyarakat",
+            "role": "Media",
             "sentimen": 1,
             "size": 1,
             "id": "@batamtoday"
         },
         {
-            "role": "Masyarakat",
+            "role": "Pemerintah",
             "sentimen": 0,
             "size": 1,
             "id": "@PolsekSmdKota"
         },
         {
-            "role": "Masyarakat",
+            "role": "Pemerintah",
             "sentimen": 1,
             "size": 1,
             "id": "@polres_madiun"
@@ -1060,7 +1060,7 @@
             "id": "@INRI2025"
         },
         {
-            "role": "Masyarakat",
+            "role": "Pemerintah",
             "sentimen": -1,
             "size": 2,
             "id": "@BAKTIKomdigi"
@@ -1126,7 +1126,7 @@
             "id": "@MangAgus_10"
         },
         {
-            "role": "Masyarakat",
+            "role": "Media",
             "sentimen": 0,
             "size": 1,
             "id": "@Dengardengarco"
@@ -1216,7 +1216,7 @@
             "id": "@deekyuwan"
         },
         {
-            "role": "Masyarakat",
+            "role": "Media",
             "sentimen": -1,
             "size": 2,
             "id": "@VGC_News"
@@ -1234,7 +1234,7 @@
             "id": "@uber_means"
         },
         {
-            "role": "Masyarakat",
+            "role": "Media",
             "sentimen": 0,
             "size": 1,
             "id": "@Polixnews"
@@ -1342,7 +1342,7 @@
             "id": "@SeekHustle"
         },
         {
-            "role": "Masyarakat",
+            "role": "Pemerintah",
             "sentimen": 1,
             "size": 1,
             "id": "@Kemenham_RI"
@@ -1552,7 +1552,7 @@
             "id": "@Makaryo0"
         },
         {
-            "role": "Masyarakat",
+            "role": "Media",
             "sentimen": 0,
             "size": 1,
             "id": "@indo_news5"
@@ -2032,7 +2032,7 @@
             "id": "@alfatih212426"
         },
         {
-            "role": "Masyarakat",
+            "role": "Media",
             "sentimen": -1,
             "size": 2,
             "id": "@tribunnews"
@@ -2218,7 +2218,7 @@
             "id": "@IsmiMaulidyati"
         },
         {
-            "role": "Masyarakat",
+            "role": "Media",
             "sentimen": -1,
             "size": 2,
             "id": "@VIZMedia"
@@ -2548,7 +2548,7 @@
             "id": "@susipudjiastuti"
         },
         {
-            "role": "Masyarakat",
+            "role": "Media",
             "sentimen": -1,
             "size": 2,
             "id": "@GNFI"
@@ -2638,7 +2638,7 @@
             "id": "@WatchPms"
         },
         {
-            "role": "Masyarakat",
+            "role": "Partai",
             "sentimen": -1,
             "size": 2,
             "id": "@Gerindra"
