@@ -1,80 +1,80 @@
-# Panduan Scraping dan Cleaning Data X (Twitter) untuk Social Network Analysis (SNA)
+# Pemodelan Graf Opini Publik (Twitter/X)
 
-Proyek ini berisi dua skrip utama yang digunakan untuk mengumpulkan data dari platform X (Twitter) dan membersihkannya agar siap digunakan untuk *Social Network Analysis* (SNA).
+Repositori ini memuat *pipeline* lengkap untuk menganalisis dan memodelkan opini publik dari media sosial X (Twitter) terkait kebijakan pemerintah ke dalam bentuk Jaringan Graf Interaktif (*Interactive Graph Network*). 
 
-## Daftar Isi
-1. [Persiapan dan Prasyarat](#persiapan-dan-prasyarat)
-2. [Tahap 1: Penggunaan script.py (Scraping Data)](#tahap-1-penggunaan-scriptpy-scraping-data)
-3. [Tahap 2: Penggunaan clean_data.py (Membersihkan Data)](#tahap-2-penggunaan-clean_datapy-membersihkan-data)
+Projek ini menggabungkan teknik **Natural Language Processing (NLP)** untuk analisis sentimen (*stance detection*) dan **Teori Graf (Graph Theory)** untuk memetakan aktor, peran, dan polarisasi interaksi antar pengguna.
 
 ---
 
-## Persiapan dan Prasyarat
+## 📂 Struktur Direktori Utama
 
-Sebelum menjalankan kedua skrip ini, pastikan Anda telah melakukan hal-hal berikut:
+Pipa pemrosesan data (*Data Pipeline*) dibagi ke dalam beberapa skrip Python berurutan dan satu antarmuka web untuk visualisasi akhir:
 
-1. **Instalasi Python**
-   Pastikan Anda sudah menginstal Python (disarankan versi 3.8 ke atas).
-
-2. **Instalasi Dependensi (Library)**
-   Buka terminal/command prompt dan instal library yang dibutuhkan, yaitu `playwright` (untuk scraping) dan `pandas` (untuk pengolahan data):
-   ```bash
-   pip install playwright pandas
-   playwright install chromium
-   ```
-
-3. **Mengekspor Cookies Akun X (Twitter)**
-   Agar skrip scraping dapat berjalan dan tidak terblokir, kita membutuhkan session login Twitter yang aktif:
-   * Login ke akun X/Twitter Anda melalui browser (contoh: Google Chrome).
-   * Gunakan ekstensi browser (seperti **EditThisCookie**, **Cookie-Editor**, atau sejenisnya) untuk mengekspor cookie sesi tersebut ke dalam format JSON.
-   * Buat file baru bernama `cookies.json` di dalam folder yang sama dengan file `script.py` dan tempelkan isinya ke file tersebut.
-
----
-
-## Tahap 1: Penggunaan `script.py` (Scraping Data)
-
-File `script.py` bertugas mencari tweet berdasarkan *keyword* tertentu. Skrip ini akan melakukan scroll layar otomatis secara berulang dan mengambil elemen seperti teks tweet, penulis, jumlah *likes/retweets*, serta interaksi (mention, reply, quote) untuk kebutuhan SNA.
-
-### Cara Penggunaan:
-1. Buka file `script.py`.
-2. Anda bisa mengubah nama file CSV output dengan mengedit variabel ini (sekitar baris ke-35):
-   ```python
-   csv_filename = "hasil_scraping_sna_2.csv"
-   ```
-3. Di bagian **paling bawah** skrip, tentukan **kata kunci pencarian** (keyword) dan **jumlah maksimal scroll** layar yang diinginkan:
-   ```python
-   scrape_with_cookies("pemblokiran judol komdigi", max_scrolls=70)
-   ```
-   * *Catatan: 1 scroll umumnya akan memuat sekitar beberapa tweet baru.*
-4. Jalankan skrip di terminal:
-   ```bash
-   python script.py
-   ```
-5. Tunggu prosesnya selesai. Setelah selesai, skrip akan membuat file CSV baru yang memuat seluruh tweet yang berhasil ditarik (contohnya `hasil_scraping_sna_2.csv`).
+```text
+graf-pemodelan-opini-publik/
+│
+├── Data/                       # Folder penyimpanan data mentah (CSV)
+├── Data/NLI/                   # Folder data yang telah diberi label sentimen
+├── graf_json/                  # Output data graf dalam format JSON
+├── python_script/              # Kumpulan skrip pemrosesan utama
+│   ├── scrap_X_script.py       # 1. Scraper Data Twitter
+│   ├── clean_data.py           # 2. Pembersihan Data Teks
+│   ├── NLI_stance.py           # 3. Prediksi Sentimen (Pro/Kontra)
+│   └── graph_builder.py        # 4. Pembentukan Jaringan Graf
+│
+├── index.html                  # 5. Visualisasi Web Interaktif (Frontend)
+└── README.md                   # Dokumentasi Projek
+```
 
 ---
 
-## Tahap 2: Penggunaan `clean_data.py` (Membersihkan Data)
+## ⚙️ Alur Kerja Sistem (*Workflow*)
 
-Data mentah hasil scraping kadang memiliki tweet duplikat atau tweet yang tidak terlalu relevan. File `clean_data.py` akan:
-* Menghapus baris yang ganda (duplikat).
-* Menyaring tweet dengan mencocokkannya menggunakan daftar *keyword*.
-* **Strategi Khusus SNA:** Skrip ini dirancang untuk tetap menyimpan tweet yang tidak memiliki *keyword* ASALKAN tweet tersebut merupakan bentuk interaksi (Reply, Quote, atau Mention). Ini sangat penting agar relasi jaringan (*edge*) pada graf (SNA) tidak terputus.
+Proyek ini dijalankan secara berurutan mengikuti langkah-langkah berikut:
 
-### Cara Penggunaan:
-1. Buka file `clean_data.py`.
-2. Di bagian **paling bawah**, pastikan argumen fungsi `clean_twitter_data` merujuk ke nama file hasil scraping yang tepat (input) dan nama file bersih (output):
-   ```python
-   # Ganti "hasil_scraping_sna.csv" sesuai dengan output dari script.py
-   clean_twitter_data("hasil_scraping_sna_2.csv", "data_siap_sna.csv")
-   ```
-3. Jika diperlukan, Anda dapat memodifikasi daftar *keyword* (sekitar baris ke-25):
-   ```python
-   keywords = ['judol', 'judi online', 'judi', 'komdigi']
-   ```
-4. Jalankan pembersihan di terminal:
+### 1. Ekstraksi Data (`scrap_X_script.py`)
+Skrip ini digunakan untuk mengambil data *tweet* mentah dari X (Twitter) berdasarkan kata kunci (*keywords*) kebijakan pemerintah tertentu. Data yang ditarik mencakup *Username*, *Tweet Text*, *Mentions*, *Reply To*, *Quote Tweet*, dan matriks interaksi lainnya.
+
+### 2. Pembersihan Data (`clean_data.py`)
+Data Twitter sangat bising (*noisy*). Skrip ini bertanggung jawab untuk memproses teks sebelum dianalisis oleh AI. Pembersihan meliputi penghapusan URL, *mentions*, karakter khusus, dan normalisasi bahasa/kata gaul (*slang*).
+
+### 3. Prediksi Sentimen & Stance (`NLI_stance.py`)
+Tahap pemrosesan NLP. Skrip ini menggunakan model **Natural Language Inference (NLI)** (seperti IndoBERT) untuk membaca teks tweet yang sudah bersih dan memprediksi apakah pengguna tersebut **Pro (Mendukung)** atau **Kontra (Menolak)** terhadap kebijakan pemerintah. Hasilnya akan menghasilkan data baru dengan kolom tambahan `Sentimen`.
+
+### 4. Pemodelan Teori Graf (`graph_builder.py`)
+Skrip inti untuk analisis jaringan menggunakan *library* `NetworkX`. 
+*   **Nodes:** Ekstraksi *Username* sebagai titik jaringan.
+*   **Edges:** Membangun garis interaksi berdasarkan kolom *Mentions* dan *Replies*.
+*   **Atribut:** Menambahkan warna (Sentimen Pro/Kontra) dan melakukan klasifikasi peran (Pemerintah, Media, Influencer, Komunitas, Masyarakat) menggunakan algoritma *Top-Down Heuristics*.
+*   **Output:** Mengonversi struktur graf menjadi format `JSON` yang siap dibaca oleh Web.
+
+### 5. Visualisasi Interaktif (`index.html`)
+Antarmuka web interaktif (Frontend) yang membaca file `JSON` dari skrip sebelumnya. Visualisasi ini dibangun untuk memudahkan analisis tingkat makro. Pengguna dapat men-*zoom*, menggeser *node*, melihat detail klasifikasi pengguna saat *hover*, serta memfilter graf berdasarkan skenario (Pro, Kontra, IKN).
+
+---
+
+## 🚀 Cara Menjalankan Projek
+
+Pastikan Anda memiliki Python versi 3.x dan telah menginstal semua pustaka yang dibutuhkan (pandas, networkx, dsb).
+
+1. **Scraping Data:**
    ```bash
-   python clean_data.py
+   python python_script/scrap_X_script.py
    ```
-5. Output di terminal akan melaporkan berapa jumlah data awal, berapa yang dihapus karena duplikat, dan jumlah data final.
-6. Anda akan mendapatkan file baru (contoh: `data_siap_sna.csv`). File inilah yang siap untuk Anda impor ke dalam *software* seperti **Gephi** atau diproses dengan **NetworkX** untuk dianalisis lebih jauh (Social Network Analysis).
+2. **Bersihkan Data:**
+   ```bash
+   python python_script/clean_data.py
+   ```
+3. **Jalankan Prediksi AI:**
+   ```bash
+   python python_script/NLI_stance.py
+   ```
+4. **Bangun Graf JSON:**
+   ```bash
+   python python_script/graph_builder.py
+   ```
+5. **Lihat Visualisasi:**
+   Buka file `index.html` menggunakan peramban web (Google Chrome / Firefox) untuk berinteraksi dengan graf secara visual.
+
+---
+*Dikembangkan untuk Projek Pemodelan Opini Publik - Teori Graf.*
